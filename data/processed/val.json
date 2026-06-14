@@ -1,0 +1,482 @@
+[
+  {
+    "input": "蛋白质157g，脂肪98g，碳水242g",
+    "output": "推荐食材：\n1. Pheasant, raw, meat only 300g（蛋白质70.7g，脂肪10.9g，碳水0.0g）\n2. Cookies, oatmeal, commercially prepared, special dietary 346g（蛋白质16.6g，脂肪62.3g，碳水241.9g）\n3. Peas, green, cooked, boiled, drained, with salt 200g（蛋白质10.7g，脂肪0.4g，碳水31.3g）\n4. Beans, baked, canned, with pork and sweet sauce 200g（蛋白质9.0g，脂肪1.8g，碳水43.1g）"
+  },
+  {
+    "input": "蛋白质81g，脂肪96g，碳水117g",
+    "output": "推荐食材：\n1. Lamb, Australian, imported, fresh, leg, shank half, separable lean and fat, trimmed to 1/8\" fat, raw 300g（蛋白质55.8g，脂肪40.4g，碳水0.0g）\n2. Rye flour, medium 155g（蛋白质16.9g，脂肪2.4g，碳水116.9g）\n3. Chicory roots, raw 150g（蛋白质2.1g，脂肪0.3g，碳水26.3g）\n4. Salad dressing, blue or roquefort cheese dressing, light 100g（蛋白质2.1g，脂肪2.7g，碳水13.2g）"
+  },
+  {
+    "input": "蛋白质131g，脂肪29g，碳水348g",
+    "output": "推荐食材：\n1. Turkey, whole, dark meat, meat and skin, cooked, roasted 300g（蛋白质81.8g，脂肪29.9g，碳水0.2g）\n2. Wheat flour, whole-grain, soft wheat 400g（蛋白质38.4g，脂肪7.8g，碳水297.9g）\n3. Winged bean leaves, raw 200g（蛋白质11.7g，脂肪2.2g，碳水28.2g）"
+  },
+  {
+    "input": "蛋白质75g，脂肪90g，碳水286g",
+    "output": "推荐食材：\n1. Beans, kidney, red, mature seeds, cooked, boiled, without salt 300g（蛋白质26.0g，脂肪1.5g，碳水68.4g）\n2. Rice, white, short-grain, raw, unenriched 361g（蛋白质23.5g，脂肪1.9g，碳水285.7g）\n3. Cowpeas, young pods with seeds, cooked, boiled, drained, without salt 100g（蛋白质2.6g，脂肪0.3g，碳水7.0g）\n4. Lamb, shoulder, blade, separable lean and fat, trimmed to 1/8\" fat, choice, cooked, braised 100g（蛋白质28.9g，脂肪23.9g，碳水0.0g）\n5. Nuts, acorn flour, full fat 100g（蛋白质7.5g，脂肪30.2g，碳水54.6g）"
+  },
+  {
+    "input": "蛋白质84g，脂肪83g，碳水121g",
+    "output": "推荐食材：\n1. Veal, external fat only, raw 300g（蛋白质26.6g，脂肪154.8g，碳水2.7g）\n2. Cookies, oatmeal, dry mix 179g（蛋白质11.6g，脂肪34.4g，碳水120.5g）\n3. Pimento, canned 150g（蛋白质1.6g，脂肪0.5g，碳水7.7g）\n4. Lamb, New Zealand, imported, neck chops, separable lean and fat, cooked, braised 154g（蛋白质43.9g，脂肪33.0g，碳水0.0g）"
+  },
+  {
+    "input": "蛋白质40g，脂肪35g，碳水394g",
+    "output": "推荐食材：\n1. Fish, bass, striped, raw 225g（蛋白质39.9g，脂肪5.2g，碳水0.0g）\n2. Archway Home Style Cookies, Raspberry Filled 400g（蛋白质17.4g，脂肪53.0g，碳水263.7g）\n3. Mustard greens, raw 100g（蛋白质2.9g，脂肪0.4g，碳水4.7g）\n4. Spaghetti, protein-fortified, cooked, enriched (n x 6.25) 300g（蛋白质26.6g，脂肪0.6g，碳水92.6g）"
+  },
+  {
+    "input": "蛋白质83g，脂肪54g，碳水288g",
+    "output": "推荐食材：\n1. Chicken, roasting, meat only, cooked, roasted 300g（蛋白质75.0g，脂肪19.9g，碳水0.0g）\n2. Cookies, chocolate chip sandwich, with creme filling 400g（蛋白质11.8g，脂肪70.6g，碳水254.1g）\n3. Chrysanthemum leaves, raw 150g（蛋白质5.0g，脂肪0.8g，碳水4.5g）"
+  },
+  {
+    "input": "蛋白质47g，脂肪84g，碳水388g",
+    "output": "推荐食材：\n1. Lamb, New Zealand, imported, loin chop, separable lean only, cooked, fast fried 171g（蛋白质46.9g，脂肪18.3g，碳水0.7g）\n2. Wheat flour, white (industrial), 11.5% protein, unbleached, enriched 400g（蛋白质46.0g，脂肪5.8g，碳水295.2g）\n3. Mushrooms, portabella, grilled 150g（蛋白质4.9g，脂肪0.9g，碳水6.7g）\n4. Nuts, cashew nuts, raw 100g（蛋白质18.2g，脂肪43.9g，碳水30.2g）"
+  },
+  {
+    "input": "蛋白质53g，脂肪59g，碳水164g",
+    "output": "推荐食材：\n1. Pork, fresh, loin, top loin (roasts), boneless, separable lean and fat, cooked, roasted 200g（蛋白质52.9g，脂肪17.6g，碳水0.0g）\n2. Bread, reduced-calorie, oat bran, toasted 333g（蛋白质31.6g，脂肪12.7g，碳水163.8g）\n3. Tomatoes, red, ripe, raw, year round average 200g（蛋白质1.8g，脂肪0.4g，碳水7.8g）\n4. Nuts, formulated, wheat-based, all flavors except macadamia, without salt 50g（蛋白质6.6g，脂肪31.1g，碳水10.4g）"
+  },
+  {
+    "input": "蛋白质47g，脂肪41g，碳水179g",
+    "output": "推荐食材：\n1. Pork, fresh, loin, sirloin (chops), boneless, separable lean and fat, cooked, broiled 166g（蛋白质46.8g，脂肪9.2g，碳水0.0g）\n2. Pie, chocolate mousse, prepared from mix, no-bake type 400g（蛋白质14.0g，脂肪61.6g，碳水118.4g）\n3. Seaweed, Canadian Cultivated EMI-TSUNOMATA, rehydrated 200g（蛋白质3.7g，脂肪0.3g，碳水11.2g）"
+  },
+  {
+    "input": "蛋白质73g，脂肪55g，碳水387g",
+    "output": "推荐食材：\n1. Pork, fresh, variety meats and by-products, tail, cooked, simmered 300g（蛋白质51.0g，脂肪107.4g，碳水0.0g）\n2. Pie, banana cream, prepared from recipe 400g（蛋白质17.6g，脂肪54.4g，碳水131.6g）\n3. Seaweed, kelp, raw 200g（蛋白质3.4g，脂肪1.1g，碳水19.1g）\n4. Crackers, cream, La Moderna Rikis Cream Crackers 300g（蛋白质21.6g，脂肪58.5g，碳水194.6g）"
+  },
+  {
+    "input": "蛋白质199g，脂肪96g，碳水159g",
+    "output": "推荐食材：\n1. Pork, fresh, composite of trimmed retail cuts (leg, loin, shoulder), separable lean only, raw 300g（蛋白质63.6g，脂肪14.6g，碳水0.0g）\n2. Archway Home Style Cookies, Reduced Fat Ginger Snaps 208g（蛋白质9.7g，脂肪23.2g，碳水158.6g）\n3. Balsam-pear (bitter gourd), pods, cooked, boiled, drained, with salt 150g（蛋白质1.3g，脂肪0.3g，碳水6.5g）\n4. Beef, round, bottom round, steak, separable lean and fat, trimmed to 1/8\" fat, choice, cooked, braised 200g（蛋白质65.7g，脂肪25.1g，碳水0.0g）\n5. Nuts, cashew nuts, raw 74g（蛋白质13.5g，脂肪32.4g，碳水22.3g）"
+  },
+  {
+    "input": "蛋白质183g，脂肪49g，碳水231g",
+    "output": "推荐食材：\n1. Beef, rib eye, small end (ribs 10-12), separable lean only, trimmed to 0\" fat, select, raw 300g（蛋白质63.5g，脂肪19.7g，碳水0.0g）\n2. Muffins, blueberry, toaster-type, toasted 400g（蛋白质19.6g，脂肪40.4g，碳水226.8g）\n3. Waterchestnuts, chinese, canned, solids and liquids 200g（蛋白质1.8g，脂肪0.1g，碳水24.6g）\n4. Beef, composite of trimmed retail cuts, separable lean and fat, trimmed to 1/8\" fat, select, raw 200g（蛋白质38.1g，脂肪24.8g，碳水0.0g）"
+  },
+  {
+    "input": "蛋白质195g，脂肪94g，碳水121g",
+    "output": "推荐食材：\n1. Bacon, pre-sliced, reduced/low sodium, unprepared 300g（蛋白质37.6g，脂肪117.8g，碳水2.5g）\n2. Cookies, peanut butter, commercially prepared, regular 208g（蛋白质18.6g，脂肪49.5g，碳水121.0g）\n3. Dandelion greens, cooked, boiled, drained, without salt 200g（蛋白质4.0g，脂肪1.2g，碳水12.8g）\n4. Lentils, raw 200g（蛋白质49.3g，脂肪2.1g，碳水126.7g）"
+  },
+  {
+    "input": "蛋白质182g，脂肪24g，碳水115g",
+    "output": "推荐食材：\n1. Lima beans, large, mature seeds, cooked, boiled, without salt 300g（蛋白质23.4g，脂肪1.1g，碳水62.6g）\n2. Cereals, QUAKER, corn grits, instant, plain, dry 146g（蛋白质10.7g，脂肪3.1g，碳水114.5g）\n3. Potatoes, mashed, home-prepared, whole milk and margarine added 150g（蛋白质2.9g，脂肪6.3g，碳水25.4g）\n4. Beans, cranberry (roman), mature seeds, canned 200g（蛋白质11.1g，脂肪0.6g，碳水30.2g）\n5. Nuts, mixed nuts, oil roasted, without peanuts, with salt added 50g（蛋白质7.8g，脂肪28.1g，碳水11.1g）"
+  },
+  {
+    "input": "蛋白质107g，脂肪88g，碳水136g",
+    "output": "推荐食材：\n1. Beef, loin, top sirloin cap steak, boneless, separable lean and fat, trimmed to 1/8\" fat, select, raw 300g（蛋白质60.3g，脂肪32.7g，碳水0.0g）\n2. Pancakes, plain, dry mix, complete, prepared 370g（蛋白质19.2g，脂肪9.2g，碳水135.8g）\n3. Cabbage, chinese (pe-tsai), cooked, boiled, drained, with salt 100g（蛋白质1.5g，脂肪0.2g，碳水2.4g）\n4. Nuts, coconut milk, frozen (liquid expressed from grated meat and water) 100g（蛋白质1.6g，脂肪20.8g，碳水5.6g）"
+  },
+  {
+    "input": "蛋白质49g，脂肪30g，碳水249g",
+    "output": "推荐食材：\n1. Lamb, Australian, imported, fresh, leg, trotter off, bone-in, separable lean and fat, trimmed to 1/8\" fat, cooked, roasted 162g（蛋白质48.8g，脂肪18.9g，碳水0.1g）\n2. Cake, cherry fudge with chocolate frosting 400g（蛋白质9.6g，脂肪50.0g，碳水152.0g）\n3. Mushrooms, shiitake, dried 100g（蛋白质9.6g，脂肪1.0g，碳水75.4g）"
+  },
+  {
+    "input": "蛋白质72g，脂肪95g，碳水386g",
+    "output": "推荐食材：\n1. Beef, loin, tenderloin roast, boneless, separable lean only, trimmed to 0\" fat, select, raw 300g（蛋白质66.5g，脂肪15.3g，碳水0.0g）\n2. Cake, pudding-type, white, unenriched, dry mix 400g（蛋白质15.6g，脂肪38.0g，碳水324.0g）\n3. Jute, potherb, raw 100g（蛋白质4.7g，脂肪0.2g，碳水5.8g）\n4. Nuts, chestnuts, japanese, boiled and steamed 100g（蛋白质0.8g，脂肪0.2g，碳水12.6g）"
+  },
+  {
+    "input": "蛋白质179g，脂肪68g，碳水359g",
+    "output": "推荐食材：\n1. Fish, trout, rainbow, farmed, raw 300g（蛋白质59.8g，脂肪18.5g，碳水0.0g）\n2. Cereals ready-to-eat, QUAKER, QUAKER OAT CINNAMON LIFE 400g（蛋白质36.6g，脂肪16.4g，碳水316.1g）\n3. Cabbage, chinese (pe-tsai), raw 200g（蛋白质2.4g，脂肪0.4g，碳水6.5g）\n4. Game meat, bison, shoulder clod, separable lean only, trimmed to 0\" fat, raw 200g（蛋白质42.2g，脂肪4.2g，碳水0.0g）\n5. Seeds, cottonseed kernels, roasted (glandless) 78g（蛋白质25.4g，脂肪28.3g，碳水17.1g）"
+  },
+  {
+    "input": "蛋白质40g，脂肪78g，碳水257g",
+    "output": "推荐食材：\n1. Veal, shoulder, blade, separable lean and fat, cooked, braised 127g（蛋白质39.7g，脂肪12.8g，碳水0.0g）\n2. Pie, cherry, commercially prepared 400g（蛋白质8.0g，脂肪44.0g，碳水159.2g）\n3. Potatoes, canned, drained solids, no salt added 100g（蛋白质1.4g，脂肪0.2g，碳水13.6g）\n4. Cereals, CREAM OF WHEAT, 1 minute cook time, cooked with water, microwaved, without salt 300g（蛋白质5.8g，脂肪1.1g，碳水32.0g）"
+  },
+  {
+    "input": "蛋白质134g，脂肪29g，碳水386g",
+    "output": "推荐食材：\n1. Crustaceans, crab, blue, crab cakes, home recipe 300g（蛋白质60.6g，脂肪22.6g，碳水1.4g）\n2. Pan Dulce, La Ricura, Salpora de Arroz con Azucar, cookie-like, contains wheat flour and rice flour 400g（蛋白质35.2g，脂肪64.4g，碳水265.1g）\n3. Peppers, hot chili, red, raw 200g（蛋白质3.7g，脂肪0.9g，碳水17.6g）"
+  },
+  {
+    "input": "蛋白质39g，脂肪92g，碳水103g",
+    "output": "推荐食材：\n1. Lamb, variety meats and by-products, spleen, raw 226g（蛋白质38.9g，脂肪7.0g，碳水0.0g）\n2. Cereals ready-to-eat, frosted oat cereal with marshmallows 121g（蛋白质8.6g，脂肪4.0g，碳水102.5g）\n3. Dock, cooked, boiled, drained, with salt 100g（蛋白质1.8g，脂肪0.6g，碳水2.9g）\n4. Nuts, chestnuts, chinese, boiled and steamed 100g（蛋白质2.9g，脂肪0.8g，碳水33.6g）"
+  },
+  {
+    "input": "蛋白质144g，脂肪84g，碳水225g",
+    "output": "推荐食材：\n1. Beef, ribeye cap steak, boneless, separable lean only, trimmed to 0\" fat, choice, cooked, grilled 300g（蛋白质72.7g，脂肪51.6g，碳水5.4g）\n2. Cake, fruitcake, commercially prepared 365g（蛋白质10.6g，脂肪33.2g，碳水224.8g）\n3. Corn, sweet, white, canned, whole kernel, regular pack, solids and liquids 200g（蛋白质3.9g，脂肪1.0g，碳水30.8g）\n4. Beef, round, eye of round, roast, separable lean and fat, trimmed to 1/8\" fat, select, cooked, roasted 200g（蛋白质56.3g，脂肪18.5g，碳水0.0g）"
+  },
+  {
+    "input": "蛋白质42g，脂肪77g，碳水166g",
+    "output": "推荐食材：\n1. Beef, chuck, under blade pot roast or steak, boneless, separable lean only, trimmed to 0\" fat, select, raw 199g（蛋白质41.8g，脂肪10.8g，碳水0.4g）\n2. Tart, breakfast, low fat 216g（蛋白质8.6g，脂肪12.9g，碳水165.9g）\n3. Peas, edible-podded, frozen, cooked, boiled, drained, without salt 100g（蛋白质3.5g，脂肪0.4g，碳水9.0g）\n4. Oil, peanut, salad or cooking 52g（蛋白质0.0g，脂肪52.0g，碳水0.0g）"
+  },
+  {
+    "input": "蛋白质169g，脂肪55g，碳水282g",
+    "output": "推荐食材：\n1. Peas, split, mature seeds, cooked, boiled, without salt 300g（蛋白质25.0g，脂肪1.2g，碳水63.3g）\n2. Pasta, cooked, unenriched, without added salt 400g（蛋白质23.2g，脂肪3.7g，碳水123.4g）\n3. Mustard greens, cooked, boiled, drained, without salt 150g（蛋白质3.8g，脂肪0.7g，碳水6.8g）\n4. Beef, rib, small end (ribs 10-12), separable lean and fat, trimmed to 1/8\" fat, choice, raw 200g（蛋白质38.2g，脂肪40.3g，碳水0.0g）\n5. Doughnuts, yeast-leavened, with jelly filling 226g（蛋白质13.3g，脂肪42.3g，碳水88.1g）"
+  },
+  {
+    "input": "蛋白质93g，脂肪32g，碳水325g",
+    "output": "推荐食材：\n1. Beef, shoulder pot roast or steak, boneless, separable lean and fat, trimmed to 0\" fat, all grades, raw 300g（蛋白质64.2g，脂肪14.9g，碳水0.0g）\n2. Cereals ready-to-eat, MALT-O-MEAL, MARSHMALLOW MATEYS 392g（蛋白质27.2g，脂肪13.8g，碳水324.5g）\n3. Potatoes, red, flesh and skin, baked 150g（蛋白质3.5g，脂肪0.2g，碳水29.4g）"
+  },
+  {
+    "input": "蛋白质138g，脂肪54g，碳水214g",
+    "output": "推荐食材：\n1. Beef, shoulder steak, boneless, separable lean and fat, trimmed to 0\" fat, all grades, cooked, grilled 300g（蛋白质84.9g，脂肪20.4g，碳水0.0g）\n2. Pancakes, plain, dry mix, incomplete (includes buttermilk) 290g（蛋白质29.0g，脂肪4.9g，碳水213.4g）\n3. Seaweed, kelp, raw 100g（蛋白质1.7g，脂肪0.6g，碳水9.6g）\n4. Seeds, lotus seeds, dried 100g（蛋白质15.4g，脂肪2.0g，碳水64.5g）"
+  },
+  {
+    "input": "蛋白质173g，脂肪70g，碳水264g",
+    "output": "推荐食材：\n1. Pork, fresh, shoulder, arm picnic, separable lean only, raw 300g（蛋白质60.8g，脂肪11.3g，碳水0.0g）\n2. Rice, white, medium-grain, raw, unenriched 332g（蛋白质21.9g，脂肪1.9g，碳水263.4g）\n3. Broccoli, cooked, boiled, drained, with salt 200g（蛋白质4.8g，脂肪0.8g，碳水14.4g）\n4. Game meat, squirrel, raw 200g（蛋白质42.5g，脂肪6.4g，碳水0.0g）\n5. Nuts, chestnuts, chinese, boiled and steamed 100g（蛋白质2.9g，脂肪0.8g，碳水33.6g）"
+  },
+  {
+    "input": "蛋白质150g，脂肪25g，碳水364g",
+    "output": "推荐食材：\n1. Beef, ground, 93% lean meat / 7% fat, raw 300g（蛋白质62.5g，脂肪21.0g，碳水0.0g）\n2. Corn grain, yellow 400g（蛋白质37.7g，脂肪19.0g，碳水297.0g）\n3. Leeks, (bulb and lower-leaf portion), freeze-dried 200g（蛋白质30.4g，脂肪4.2g，碳水149.3g）"
+  },
+  {
+    "input": "蛋白质93g，脂肪28g，碳水252g",
+    "output": "推荐食材：\n1. Pork, cured, ham with natural juices, shank, bone-in, separable lean and fat, heated, roasted 300g（蛋白质68.6g，脂肪32.8g，碳水1.0g）\n2. Cookies, chocolate sandwich, with creme filling, regular 354g（蛋白质18.4g，脂肪67.8g，碳水251.3g）\n3. Peppers, serrano, raw 100g（蛋白质1.7g，脂肪0.4g，碳水6.7g）"
+  },
+  {
+    "input": "蛋白质125g，脂肪65g，碳水198g",
+    "output": "推荐食材：\n1. Emu, fan fillet, raw 300g（蛋白质67.5g，脂肪2.4g，碳水0.0g）\n2. Cookies, gluten-free, lemon wafer 266g（蛋白质0.0g，脂肪64.3g，碳水197.9g）\n3. Cowpeas (blackeyes), immature seeds, cooked, boiled, drained, with salt 200g（蛋白质6.3g，脂肪0.8g，碳水39.5g）\n4. Mollusks, whelk, unspecified, cooked, moist heat 107g（蛋白质51.0g，脂肪0.9g，碳水16.6g）"
+  },
+  {
+    "input": "蛋白质46g，脂肪99g，碳水216g",
+    "output": "推荐食材：\n1. Fish, cod, Atlantic, canned, solids and liquid 202g（蛋白质46.0g，脂肪1.7g，碳水0.0g）\n2. Cereals, CREAM OF WHEAT, 2 1/2 minute cook time, dry 300g（蛋白质34.8g，脂肪4.2g，碳水215.4g）\n3. Grape leaves, raw 100g（蛋白质5.6g，脂肪2.1g，碳水17.3g）\n4. Seeds, sesame seed kernels, toasted, with salt added (decorticated) 100g（蛋白质17.0g，脂肪48.0g，碳水26.0g）"
+  },
+  {
+    "input": "蛋白质168g，脂肪66g，碳水218g",
+    "output": "推荐食材：\n1. Beef, chuck eye steak, boneless, separable lean and fat, trimmed to 0\" fat, select, raw 300g（蛋白质56.6g，脂肪46.8g，碳水0.0g）\n2. Wheat flour, white, all-purpose, enriched, bleached 285g（蛋白质29.4g，脂肪2.8g，碳水217.5g）\n3. Seaweed, irishmoss, raw 150g（蛋白质2.3g，脂肪0.2g，碳水18.4g）\n4. Lamb, Australian, imported, fresh, leg, bottom, boneless, separable lean and fat, trimmed to 1/8\" fat, cooked, roasted 200g（蛋白质55.1g，脂肪24.1g，碳水0.0g）"
+  },
+  {
+    "input": "蛋白质34g，脂肪50g，碳水199g",
+    "output": "推荐食材：\n1. Chicken, broilers or fryers, dark meat, drumstick, meat only, cooked, roasted 140g（蛋白质33.9g，脂肪8.0g，碳水0.0g）\n2. Bread, rice bran, toasted 400g（蛋白质38.8g，脂肪20.0g，碳水189.2g）\n3. Water convolvulus,raw 100g（蛋白质2.6g，脂肪0.2g，碳水3.1g）\n4. Dressing, honey mustard, fat-free 100g（蛋白质1.1g，脂肪1.5g，碳水38.4g）"
+  },
+  {
+    "input": "蛋白质81g，脂肪43g，碳水317g",
+    "output": "推荐食材：\n1. Pork, cured, ham and water product, slice, bone-in, separable lean only, heated, pan-broil 300g（蛋白质62.7g，脂肪10.9g，碳水4.0g）\n2. Pie crust, standard-type, dry mix 400g（蛋白质27.6g，脂肪125.6g，碳水208.4g）\n3. Rutabagas, cooked, boiled, drained, without salt 100g（蛋白质0.9g，脂肪0.2g，碳水6.8g）\n4. Crackers, cheese, sandwich-type with peanut butter filling 172g（蛋白质21.3g，脂肪43.2g，碳水97.6g）"
+  },
+  {
+    "input": "蛋白质81g，脂肪61g，碳水240g",
+    "output": "推荐食材：\n1. Lupins, mature seeds, raw 223g（蛋白质80.7g，脂肪21.7g，碳水90.0g）\n2. Pie, lemon meringue, prepared from recipe 400g（蛋白质15.2g，脂肪51.6g，碳水156.4g）\n3. Taro, cooked, with salt 100g（蛋白质0.5g，脂肪0.1g，碳水34.6g）"
+  },
+  {
+    "input": "蛋白质172g，脂肪96g，碳水288g",
+    "output": "推荐食材：\n1. Pork, fresh, shoulder, (Boston butt), blade (steaks), separable lean only, with added solution, raw 300g（蛋白质54.9g，脂肪16.1g，碳水0.5g）\n2. Wheat flour, white (industrial), 15% protein, bleached, unenriched 400g（蛋白质61.3g，脂肪5.6g，碳水279.5g）\n3. Beans, shellie, canned, solids and liquids 100g（蛋白质1.8g，脂肪0.2g，碳水6.2g）\n4. Turkey, wing, from whole bird, meat only, with added solution, roasted 200g（蛋白质53.9g，脂肪4.2g，碳水0.0g）\n5. Nuts, mixed nuts, oil roasted, with peanuts, with salt added 100g（蛋白质20.0g，脂肪54.0g，碳水21.1g）"
+  },
+  {
+    "input": "蛋白质50g，脂肪97g，碳水376g",
+    "output": "推荐食材：\n1. Beef, loin, tenderloin steak, boneless, separable lean and fat, trimmed to 0\" fat, choice, raw 231g（蛋白质49.8g，脂肪16.4g，碳水0.0g）\n2. Cereals ready-to-eat, RALSTON Enriched Wheat Bran flakes 400g（蛋白质40.8g，脂肪13.4g，碳水319.1g）\n3. Waxgourd, (chinese preserving melon), raw 150g（蛋白质0.6g，脂肪0.3g，碳水4.5g）\n4. Salad dressing, italian dressing, commercial, regular 100g（蛋白质0.4g，脂肪21.1g，碳水12.1g）"
+  },
+  {
+    "input": "蛋白质134g，脂肪61g，碳水219g",
+    "output": "推荐食材：\n1. Pork, fresh, shoulder, blade, boston (steaks), separable lean only, cooked, broiled 300g（蛋白质80.2g，脂肪37.6g，碳水0.0g）\n2. Wheat bran, crude 339g（蛋白质52.7g，脂肪14.4g，碳水218.7g）\n3. Sauerkraut, canned, solids and liquids 200g（蛋白质1.8g，脂肪0.3g，碳水8.6g）"
+  },
+  {
+    "input": "蛋白质86g，脂肪58g，碳水189g",
+    "output": "推荐食材：\n1. Beans, kidney, all types, mature seeds, raw 300g（蛋白质70.7g，脂肪2.5g，碳水180.0g）\n2. Cereals, corn grits, white, regular and quick, enriched, cooked with water, with salt 400g（蛋白质6.8g，脂肪1.8g，碳水59.0g）\n3. Potatoes, microwaved, cooked in skin, flesh and skin, without salt 100g（蛋白质2.4g，脂肪0.1g，碳水24.2g）\n4. Salad dressing, KRAFT MIRACLE WHIP FREE Nonfat Dressing 100g（蛋白质0.2g，脂肪2.7g，碳水15.5g）"
+  },
+  {
+    "input": "蛋白质83g，脂肪35g，碳水198g",
+    "output": "推荐食材：\n1. Chicken, broilers or fryers, dark meat, meat only, cooked, stewed 300g（蛋白质77.9g，脂肪26.9g，碳水0.0g）\n2. Crackers, snack, Goya Crackers 307g（蛋白质43.7g，脂肪41.0g，碳水197.6g）\n3. Squash, winter, hubbard, baked, without salt 200g（蛋白质5.0g，脂肪1.2g，碳水21.6g）"
+  },
+  {
+    "input": "蛋白质35g，脂肪52g，碳水216g",
+    "output": "推荐食材：\n1. Lamb, Australian, imported, fresh, leg, bottom, boneless, separable lean and fat, trimmed to 1/8\" fat, raw 166g（蛋白质34.8g，脂肪19.0g，碳水0.0g）\n2. Cookies, fig bars 304g（蛋白质11.2g，脂肪22.2g，碳水215.5g）\n3. Artichokes, (globe or french), cooked, boiled, drained, with salt 100g（蛋白质2.9g，脂肪0.3g，碳水11.4g）"
+  },
+  {
+    "input": "蛋白质87g，脂肪39g，碳水224g",
+    "output": "推荐食材：\n1. Beef, chuck eye Country-Style ribs, boneless, separable lean only, trimmed to 0\" fat, all grades, raw 300g（蛋白质62.9g，脂肪20.9g，碳水0.0g）\n2. Cookies, oatmeal, refrigerated dough, baked 340g（蛋白质20.4g，脂肪71.4g，碳水223.4g）\n3. Potatoes, microwaved, cooked in skin, flesh, with salt 100g（蛋白质2.1g，脂肪0.1g，碳水23.3g）"
+  },
+  {
+    "input": "蛋白质62g，脂肪32g，碳水286g",
+    "output": "推荐食材：\n1. Beef, round, top round, steak, separable lean and fat, trimmed to 1/8\" fat, select, cooked, broiled 202g（蛋白质61.9g，脂肪15.6g，碳水0.0g）\n2. Croissants, butter 400g（蛋白质32.8g，脂肪84.0g，碳水183.2g）\n3. Beets, canned, regular pack, solids and liquids 100g（蛋白质0.7g，脂肪0.1g，碳水7.1g）\n4. Vital wheat gluten 300g（蛋白质225.5g，脂肪5.5g，碳水41.4g）"
+  },
+  {
+    "input": "蛋白质194g，脂肪100g，碳水346g",
+    "output": "推荐食材：\n1. Chicken, broilers or fryers, meat and skin and giblets and neck, cooked, fried, flour 300g（蛋白质85.7g，脂肪45.8g，碳水9.8g）\n2. Bagels, plain, enriched, without calcium propionate (includes onion, poppy, sesame) 400g（蛋白质42.0g，脂肪6.4g，碳水213.6g）\n3. New Zealand spinach, cooked, boiled, drained, without salt 200g（蛋白质2.6g，脂肪0.3g，碳水4.3g）\n4. Mollusks, snail, raw 200g（蛋白质32.2g，脂肪2.8g，碳水4.0g）\n5. Pie, banana cream, prepared from mix, no-bake type 300g（蛋白质10.2g，脂肪38.7g，碳水94.8g）"
+  },
+  {
+    "input": "蛋白质160g，脂肪89g，碳水259g",
+    "output": "推荐食材：\n1. Emu, flat fillet, raw 300g（蛋白质66.8g，脂肪2.2g，碳水0.0g）\n2. Rice, white, long-grain, precooked or instant, enriched, prepared 400g（蛋白质8.7g，脂肪2.0g，碳水107.0g）\n3. Chayote, fruit, raw 100g（蛋白质0.8g，脂肪0.1g，碳水4.5g）\n4. Lamb, Australian, imported, fresh, leg, hindshank, heel on, bone-in, separable lean only, trimmed to 1/8\" fat, raw 200g（蛋白质45.0g，脂肪7.1g，碳水0.0g）\n5. Rye grain 194g（蛋白质20.1g，脂肪3.2g，碳水147.2g）\n6. Salad dressing, thousand island dressing, fat-free 100g（蛋白质0.6g，脂肪1.4g，碳水29.3g）"
+  },
+  {
+    "input": "蛋白质31g，脂肪37g，碳水375g",
+    "output": "推荐食材：\n1. Beans, liquid from stewed kidney beans 300g（蛋白质5.4g，脂肪9.6g，碳水8.4g）\n2. Pie, banana cream, prepared from mix, no-bake type 400g（蛋白质13.6g，脂肪51.6g，碳水126.4g）\n3. Jew's ear, (pepeao), raw 100g（蛋白质0.5g，脂肪0.0g，碳水6.8g）\n4. Lamb, rib, separable lean only, trimmed to 1/4\" fat, choice, raw 100g（蛋白质20.0g，脂肪9.2g，碳水0.0g）\n5. Muffins, blueberry, toaster-type 300g（蛋白质13.8g，脂肪28.5g，碳水159.9g）"
+  },
+  {
+    "input": "蛋白质146g，脂肪31g，碳水211g",
+    "output": "推荐食材：\n1. Veal, variety meats and by-products, thymus, raw 300g（蛋白质51.6g，脂肪9.2g，碳水0.0g）\n2. Crackers, matzo, egg and onion 273g（蛋白质27.3g，脂肪10.6g，碳水210.5g）\n3. Beets, harvard, canned, solids and liquids 150g（蛋白质1.3g，脂肪0.1g，碳水27.3g）\n4. Beef, flank, steak, separable lean only, trimmed to 0\" fat, choice, cooked, broiled 200g（蛋白质55.6g，脂肪16.6g，碳水0.0g）"
+  },
+  {
+    "input": "蛋白质54g，脂肪96g，碳水370g",
+    "output": "推荐食材：\n1. Pork, fresh, loin, top loin (roasts), boneless, separable lean and fat, raw 253g（蛋白质54.0g，脂肪21.1g，碳水0.0g）\n2. Rice, brown, long-grain, cooked (Includes foods for USDA's Food Distribution Program) 400g（蛋白质11.0g，脂肪3.9g，碳水102.3g）\n3. Cauliflower, green, cooked, no salt added 200g（蛋白质6.1g，脂肪0.6g，碳水12.6g）\n4. Bread, rice bran 300g（蛋白质26.7g，脂肪13.8g，碳水130.5g）\n5. Seeds, sesame butter, tahini, type of kernels unspecified 100g（蛋白质17.4g，脂肪53.0g，碳水21.5g）"
+  },
+  {
+    "input": "蛋白质182g，脂肪46g，碳水177g",
+    "output": "推荐食材：\n1. Turkey, whole, breast, meat only, cooked, roasted 300g（蛋白质90.4g，脂肪6.2g，碳水0.0g）\n2. Cereals, MALT-O-MEAL, original, plain, prepared with water, without salt 400g（蛋白质6.7g，脂肪0.4g，碳水40.4g）\n3. Mushrooms, portabella, grilled 150g（蛋白质4.9g，脂肪0.9g，碳水6.7g）\n4. Lamb, New Zealand, imported, square-cut shoulder chops, separable lean only, raw 200g（蛋白质41.2g，脂肪18.2g，碳水0.0g）\n5. Cereals ready-to-eat, MALT-O-MEAL, Fruity DYNO-BITES 144g（蛋白质5.6g，脂肪4.5g，碳水129.7g）\n6. Nuts, mixed nuts, oil roasted, with peanuts, without salt added 50g（蛋白质10.0g，脂肪27.0g，碳水10.5g）"
+  },
+  {
+    "input": "蛋白质54g，脂肪50g，碳水378g",
+    "output": "推荐食材：\n1. Beef, brisket, whole, separable lean only, trimmed to 0\" fat, all grades, cooked, braised 181g（蛋白质53.8g，脂肪18.2g，碳水0.0g）\n2. Crackers, standard snack-type, sandwich, with peanut butter filling 400g（蛋白质45.9g，脂肪98.2g，碳水233.5g）\n3. Potatoes, frozen, whole, cooked, boiled, drained, without salt 100g（蛋白质2.0g，脂肪0.1g，碳水14.5g）\n4. Pasta, homemade, made without egg, cooked 300g（蛋白质13.1g，脂肪2.9g，碳水75.4g）"
+  },
+  {
+    "input": "蛋白质90g，脂肪21g，碳水315g",
+    "output": "推荐食材：\n1. Lamb, shoulder, blade, separable lean and fat, trimmed to 1/8\" fat, choice, cooked, braised 300g（蛋白质86.8g，脂肪71.6g，碳水0.0g）\n2. Cereals ready-to-eat, POST, Honeycomb Cereal 363g（蛋白质21.8g，脂肪10.6g，碳水314.5g）\n3. Potatoes, yellow fleshed, roasted, salt added in processing, frozen, unprepared 100g（蛋白质2.0g，脂肪1.9g，碳水23.4g）"
+  },
+  {
+    "input": "蛋白质34g，脂肪24g，碳水195g",
+    "output": "推荐食材：\n1. Beef, top sirloin, steak, separable lean only, trimmed to 0\" fat, select, cooked, broiled 110g（蛋白质33.9g，脂肪5.5g，碳水0.0g）\n2. Archway Home Style Cookies, Old Fashioned Molasses 276g（蛋白质11.8g，脂肪32.7g，碳水194.7g）\n3. Onions, canned, solids and liquids 150g（蛋白质1.3g，脂肪0.1g，碳水6.0g）"
+  },
+  {
+    "input": "蛋白质62g，脂肪33g，碳水365g",
+    "output": "推荐食材：\n1. SILK Original Creamer 100g（蛋白质0.0g，脂肪6.7g，碳水6.7g）\n2. Sage Valley, Gluten Free Vanilla Sandwich Cookies 400g（蛋白质12.5g，脂肪88.6g，碳水287.5g）\n3. Spinach, frozen, chopped or leaf, cooked, boiled, drained, without salt 150g（蛋白质6.0g，脂肪1.3g，碳水7.2g）\n4. Crustaceans, crab, alaska king, imitation, made from surimi 200g（蛋白质15.2g，脂肪0.9g，碳水30.0g）"
+  },
+  {
+    "input": "蛋白质128g，脂肪31g，碳水260g",
+    "output": "推荐食材：\n1. Beef, New Zealand, imported, hind shin, separable lean and fat, raw 300g（蛋白质61.8g，脂肪21.6g，碳水0.0g）\n2. Rice, white, long-grain, parboiled, enriched, cooked 400g（蛋白质11.6g，脂肪1.5g，碳水104.2g）\n3. Squash, winter, butternut, cooked, baked, with salt 150g（蛋白质1.4g，脂肪0.1g，碳水15.7g）\n4. Pork, fresh, loin, center rib (chops or roasts), bone-in, separable lean only, raw 200g（蛋白质43.6g，脂肪9.6g，碳水0.0g）\n5. Cereals, QUAKER, Instant Oatmeal, DINOSAUR EGGS, Brown Sugar, dry 190g（蛋白质16.5g，脂肪14.4g，碳水140.0g）"
+  },
+  {
+    "input": "蛋白质167g，脂肪60g，碳水185g",
+    "output": "推荐食材：\n1. Veal, breast, point half, boneless, separable lean and fat, cooked, braised 300g（蛋白质84.7g，脂肪42.5g，碳水0.0g）\n2. Rolls, hamburger or hotdog, mixed-grain 400g（蛋白质38.4g，脂肪24.0g，碳水178.4g）\n3. Corn, sweet, white, frozen, kernels cut off cob, unprepared 100g（蛋白质3.0g，脂肪0.8g，碳水20.7g）"
+  },
+  {
+    "input": "蛋白质187g，脂肪95g，碳水146g",
+    "output": "推荐食材：\n1. Beef, round, knuckle, tip side, steak, separable lean and fat, trimmed to 0\" fat, all grades, raw 300g（蛋白质65.1g，脂肪12.0g，碳水0.0g）\n2. English muffins, whole grain white 291g（蛋白质20.4g，脂肪5.1g，碳水146.0g）\n3. Broccoli, chinese, raw 200g（蛋白质2.4g，脂肪1.5g，碳水9.3g）\n4. Game meat, deer, top round, separable lean only, 1\" steak, cooked, broiled 200g（蛋白质62.9g，脂肪3.8g，碳水0.0g）\n5. Margarine-like, vegetable oil spread, 20% fat, with salt 100g（蛋白质0.0g，脂肪19.5g，碳水0.4g）"
+  },
+  {
+    "input": "蛋白质77g，脂肪52g，碳水103g",
+    "output": "推荐食材：\n1. Beef, rib, back ribs, bone-in, separable lean only, trimmed to 0\" fat, choice, raw 300g（蛋白质56.2g，脂肪58.1g，碳水1.9g）\n2. Cookies, gluten-free, chocolate sandwich, with creme filling 135g（蛋白质3.0g，脂肪24.2g，碳水102.6g）\n3. Beets, cooked, boiled, drained 150g（蛋白质2.5g，脂肪0.3g，碳水14.9g）"
+  },
+  {
+    "input": "蛋白质83g，脂肪39g，碳水391g",
+    "output": "推荐食材：\n1. Lamb, Australian, imported, fresh, shoulder, arm, separable lean and fat, trimmed to 1/8\" fat, cooked, braised 279g（蛋白质82.9g，脂肪56.9g，碳水0.0g）\n2. Pasta, fresh-refrigerated, plain, as purchased 400g（蛋白质45.2g，脂肪9.2g，碳水218.9g）\n3. Vegetable juice cocktail, low sodium, canned 100g（蛋白质0.9g，脂肪0.3g，碳水3.8g）\n4. Pancakes, buckwheat, dry mix, incomplete 235g（蛋白质25.6g，脂肪6.3g，碳水167.6g）"
+  },
+  {
+    "input": "蛋白质162g，脂肪43g，碳水332g",
+    "output": "推荐食材：\n1. Beef, variety meats and by-products, liver, raw 300g（蛋白质61.1g，脂肪10.9g，碳水11.7g）\n2. Bread, rice bran 400g（蛋白质35.6g，脂肪18.4g，碳水174.0g）\n3. Celery, raw 200g（蛋白质1.4g，脂肪0.3g，碳水5.9g）\n4. Lamb, variety meats and by-products, brain, cooked, braised 200g（蛋白质25.1g，脂肪20.3g，碳水0.0g）\n5. Bread, oat bran 300g（蛋白质31.2g，脂肪13.2g，碳水119.4g）"
+  },
+  {
+    "input": "蛋白质55g，脂肪26g，碳水326g",
+    "output": "推荐食材：\n1. Beef, chuck, arm pot roast, separable lean only, trimmed to 1/8\" fat, select, cooked, braised 158g（蛋白质54.7g，脂肪10.0g，碳水0.0g）\n2. Rolls, dinner, whole-wheat 400g（蛋白质34.8g，脂肪18.8g，碳水204.4g）\n3. Peppers, pasilla, dried 150g（蛋白质18.5g，脂肪23.8g，碳水76.7g）"
+  },
+  {
+    "input": "蛋白质156g，脂肪48g，碳水104g",
+    "output": "推荐食材：\n1. Lamb, leg, sirloin half, separable lean and fat, trimmed to 1/8\" fat, choice, raw 300g（蛋白质51.6g，脂肪62.4g，碳水0.0g）\n2. Crackers, matzo, egg 132g（蛋白质16.2g，脂肪2.8g，碳水103.8g）\n3. Mountain yam, hawaii, cooked, steamed, with salt 200g（蛋白质3.5g，脂肪0.2g，碳水40.0g）\n4. Lamb, Australian, imported, fresh, leg, bottom, boneless, separable lean only, trimmed to 1/8\" fat, raw 200g（蛋白质44.6g，脂肪10.5g，碳水0.0g）"
+  },
+  {
+    "input": "蛋白质105g，脂肪65g，碳水154g",
+    "output": "推荐食材：\n1. Pork, fresh, shoulder, whole, separable lean only, cooked, roasted 300g（蛋白质76.0g，脂肪40.6g，碳水0.0g）\n2. Nabisco, Nabisco Grahams Crackers 202g（蛋白质14.1g，脂肪20.2g，碳水153.9g）\n3. Turnips, raw 150g（蛋白质1.4g，脂肪0.1g，碳水9.6g）"
+  },
+  {
+    "input": "蛋白质180g，脂肪34g，碳水283g",
+    "output": "推荐食材：\n1. Pork, fresh, loin, tenderloin, separable lean and fat, raw 300g（蛋白质62.0g，脂肪10.6g，碳水0.0g）\n2. Bread, stuffing, dry mix, prepared 400g（蛋白质10.9g，脂肪48.2g，碳水75.4g）\n3. Pigeonpeas, immature seeds, raw 150g（蛋白质10.8g，脂肪2.5g，碳水35.8g）\n4. Lamb, New Zealand, imported, sweetbread, raw 200g（蛋白质22.0g，脂肪6.3g，碳水0.0g）\n5. Doughnuts, cake-type, plain, chocolate-coated or frosted 300g（蛋白质14.8g，脂肪75.8g，碳水154.0g）"
+  },
+  {
+    "input": "蛋白质195g，脂肪99g，碳水228g",
+    "output": "推荐食材：\n1. Beef, shoulder top blade steak, boneless, separable lean only, trimmed to 0\" fat, select, raw 300g（蛋白质61.2g，脂肪17.2g，碳水0.0g）\n2. Keikitos (muffins), Latino bakery item 400g（蛋白质27.2g，脂肪101.0g，碳水212.6g）\n3. New zealand spinach, cooked, boiled, drained, with salt 100g（蛋白质1.3g，脂肪0.2g，碳水2.1g）\n4. Lamb, shoulder, arm, separable lean and fat, trimmed to 1/4\" fat, choice, cooked, broiled 200g（蛋白质48.9g，脂肪39.1g，碳水0.0g）"
+  },
+  {
+    "input": "蛋白质81g，脂肪97g，碳水382g",
+    "output": "推荐食材：\n1. Chicken, broilers or fryers, leg, meat and skin, raw 300g（蛋白质49.1g，脂肪47.9g，碳水0.5g）\n2. Oat bran, cooked 400g（蛋白质12.8g，脂肪3.4g，碳水45.8g）\n3. Corn, sweet, white, canned, whole kernel, regular pack, solids and liquids 100g（蛋白质1.9g，脂肪0.5g，碳水15.4g）\n4. Sorghum grain 300g（蛋白质31.9g，脂肪10.4g，碳水216.3g）\n5. Margarine-like, vegetable oil spread, 60% fat, tub, with salt 58g（蛋白质0.1g，脂肪34.7g，碳水0.5g）"
+  },
+  {
+    "input": "蛋白质116g，脂肪88g，碳水105g",
+    "output": "推荐食材：\n1. Fish, mackerel, Pacific and jack, mixed species, cooked, dry heat 300g（蛋白质77.2g，脂肪30.4g，碳水0.0g）\n2. Crackers, standard snack-type, with whole wheat 153g（蛋白质11.2g，脂肪27.3g，碳水104.6g）\n3. Balsam-pear (bitter gourd), pods, raw 200g（蛋白质2.0g，脂肪0.3g，碳水7.4g）\n4. Nuts, chestnuts, chinese, raw 100g（蛋白质4.2g，脂肪1.1g，碳水49.1g）"
+  },
+  {
+    "input": "蛋白质35g，脂肪24g，碳水339g",
+    "output": "推荐食材：\n1. Lamb, shoulder, arm, separable lean and fat, trimmed to 1/8\" fat, choice, roasted 152g（蛋白质34.9g，脂肪28.5g，碳水0.0g）\n2. Cake, coffeecake, cinnamon with crumb topping, commercially prepared, unenriched 400g（蛋白质27.2g，脂肪93.2g，碳水186.8g）\n3. Beans, snap, yellow, frozen, all styles, unprepared 200g（蛋白质3.6g，脂肪0.4g，碳水15.2g）\n4. Rice noodles, cooked 300g（蛋白质5.4g，脂肪0.6g，碳水72.0g）"
+  },
+  {
+    "input": "蛋白质61g，脂肪50g，碳水366g",
+    "output": "推荐食材：\n1. Beef, shoulder top blade steak, boneless, separable lean only, trimmed to 0\" fat, select, raw 299g（蛋白质61.0g，脂肪17.1g，碳水0.0g）\n2. Cereals ready-to-eat, SUN COUNTRY, KRETSCHMER Wheat Germ, Regular 400g（蛋白质125.7g，脂肪38.2g，碳水197.5g）\n3. Spinach, cooked, boiled, drained, without salt 200g（蛋白质5.9g，脂肪0.5g，碳水7.5g）\n4. Cookies, shortbread, commercially prepared, pecan 276g（蛋白质13.5g，脂肪89.7g，碳水160.9g）"
+  },
+  {
+    "input": "蛋白质47g，脂肪32g，碳水235g",
+    "output": "推荐食材：\n1. Beef, chuck, arm pot roast, separable lean only, trimmed to 1/8\" fat, choice, cooked, braised 135g（蛋白质46.9g，脂肪11.3g，碳水0.0g）\n2. Crackers, cheese, sandwich-type with cheese filling 399g（蛋白质35.6g，脂肪97.4g，碳水234.5g）\n3. Tomato products, canned, sauce 150g（蛋白质1.8g，脂肪0.5g，碳水8.0g）"
+  },
+  {
+    "input": "蛋白质142g，脂肪81g，碳水289g",
+    "output": "推荐食材：\n1. HORMEL ALWAYS TENDER, Pork Tenderloin, Teriyaki-Flavored 300g（蛋白质54.6g，脂肪9.2g，碳水13.9g）\n2. Pillsbury Golden Layer Buttermilk Biscuits, Artificial Flavor, refrigerated dough 400g（蛋白质23.5g，脂肪53.0g，碳水164.7g）\n3. Beans, snap, yellow, cooked, boiled, drained, with salt 200g（蛋白质3.8g，脂肪0.6g，碳水15.8g）\n4. Beans, pinto, mature seeds, canned, drained solids, rinsed in tap water 200g（蛋白质14.1g，脂肪1.9g，碳水41.5g）"
+  },
+  {
+    "input": "蛋白质84g，脂肪62g，碳水118g",
+    "output": "推荐食材：\n1. Chicken, broiler or fryers, breast, skinless, boneless, meat only, with added solution, cooked, braised 297g（蛋白质83.9g，脂肪10.7g，碳水0.0g）\n2. Crackers, whole-wheat, low salt 172g（蛋白质15.1g，脂肪29.6g，碳水118.0g）\n3. Ginger root, raw 100g（蛋白质1.8g，脂肪0.8g，碳水17.8g）\n4. Fat, turkey 50g（蛋白质0.0g，脂肪49.9g，碳水0.0g）"
+  },
+  {
+    "input": "蛋白质101g，脂肪97g，碳水227g",
+    "output": "推荐食材：\n1. Pork, fresh, loin, center loin (chops), bone-in, separable lean only, cooked, braised 300g（蛋白质90.6g，脂肪23.6g，碳水0.0g）\n2. Cookies, chocolate chip, dry mix 343g（蛋白质15.8g，脂肪86.4g，碳水226.7g）\n3. Onions, sweet, raw 200g（蛋白质1.6g，脂肪0.2g，碳水15.1g）"
+  },
+  {
+    "input": "蛋白质127g，脂肪61g，碳水278g",
+    "output": "推荐食材：\n1. Turkey breast, pre-basted, meat and skin, cooked, roasted 300g（蛋白质66.5g，脂肪10.4g，碳水0.0g）\n2. Wheat, soft red winter 374g（蛋白质38.7g，脂肪5.8g，碳水277.7g）\n3. Cress, garden, raw 150g（蛋白质3.9g，脂肪1.1g，碳水8.2g）\n4. Nuts, almonds, blanched 83g（蛋白质17.8g，脂肪43.6g，碳水15.5g）"
+  },
+  {
+    "input": "蛋白质138g，脂肪72g，碳水118g",
+    "output": "推荐食材：\n1. Beef, round, tip round, roast, separable lean only, trimmed to 0\" fat, choice, raw 300g（蛋白质62.3g，脂肪13.7g，碳水0.0g）\n2. Corn flour, whole-grain, yellow 153g（蛋白质10.6g，脂肪5.9g，碳水117.6g）\n3. Pickle relish, hot dog 150g（蛋白质2.2g，脂肪0.7g，碳水35.0g）\n4. Chicken, canned, meat only, with broth 200g（蛋白质43.5g，脂肪15.9g，碳水0.0g）\n5. Nuts, coconut meat, dried (desiccated), sweetened, flaked, canned 100g（蛋白质3.4g，脂肪31.7g，碳水40.9g）"
+  },
+  {
+    "input": "蛋白质187g，脂肪78g，碳水231g",
+    "output": "推荐食材：\n1. Pork, fresh, variety meats and by-products, lungs, cooked, braised 300g（蛋白质49.8g，脂肪9.3g，碳水0.0g）\n2. Cookies, chocolate chip, commercially prepared, regular, higher fat, enriched 353g（蛋白质18.0g，脂肪87.3g，碳水230.7g）\n3. Mustard greens, frozen, cooked, boiled, drained, with salt 150g（蛋白质3.4g，脂肪0.4g，碳水4.7g）\n4. Beef, chuck for stew, separable lean and fat, all grades, raw 200g（蛋白质43.5g，脂肪9.0g，碳水0.3g）"
+  },
+  {
+    "input": "蛋白质188g，脂肪77g，碳水138g",
+    "output": "推荐食材：\n1. Turkey, dark meat, meat only, with added solution, cooked, roasted 300g（蛋白质78.3g，脂肪18.0g，碳水0.0g）\n2. Cake, coffeecake, creme-filled with chocolate frosting 256g（蛋白质12.8g，脂肪27.6g，碳水137.7g）\n3. Soybeans, green, cooked, boiled, drained, with salt 150g（蛋白质18.5g，脂肪9.6g，碳水16.6g）\n4. Fish, salmon, chum, raw 200g（蛋白质40.3g，脂肪7.5g，碳水0.0g）"
+  },
+  {
+    "input": "蛋白质179g，脂肪71g，碳水347g",
+    "output": "推荐食材：\n1. Fish, carp, raw 300g（蛋白质53.5g，脂肪16.8g，碳水0.0g）\n2. Cereals ready-to-eat, QUAKER, Maple Brown Sugar LIFE Cereal 400g（蛋白质36.7g，脂肪16.2g，碳水315.4g）\n3. Lima beans, immature seeds, canned, no salt added, solids and liquids 150g（蛋白质6.1g，脂肪0.4g，碳水20.0g）\n4. Beef, chuck for stew, separable lean and fat, all grades, cooked, braised 200g（蛋白质64.8g，脂肪13.6g，碳水0.0g）\n5. Shortening, special purpose for cakes and frostings, soybean (hydrogenated) 50g（蛋白质0.0g，脂肪50.0g，碳水0.0g）"
+  },
+  {
+    "input": "蛋白质148g，脂肪72g，碳水141g",
+    "output": "推荐食材：\n1. Turkey, retail parts, breast, meat only, raw 300g（蛋白质70.0g，脂肪7.0g，碳水0.0g）\n2. Cereals ready-to-eat, RALSTON Crispy Hexagons 162g（蛋白质9.6g，脂肪1.5g，碳水140.6g）\n3. Pumpkin, canned, without salt 150g（蛋白质1.6g，脂肪0.4g，碳水12.1g）\n4. Beef, sandwich steaks, flaked, chopped, formed and thinly sliced, raw 200g（蛋白质33.0g，脂肪54.0g，碳水0.0g）"
+  },
+  {
+    "input": "蛋白质177g，脂肪54g，碳水333g",
+    "output": "推荐食材：\n1. Game meat, beaver, cooked, roasted 300g（蛋白质104.5g，脂肪20.9g，碳水0.0g）\n2. Muffins, plain, prepared from recipe, made with low fat (2%) milk 400g（蛋白质27.6g，脂肪45.6g，碳水165.6g）\n3. Artichokes, (globe or french), frozen, cooked, boiled, drained, without salt 150g（蛋白质4.7g，脂肪0.8g，碳水13.8g）\n4. Tortillas, ready-to-bake or -fry, flour, without added calcium 276g（蛋白质24.0g，脂肪19.6g，碳水153.5g）"
+  },
+  {
+    "input": "蛋白质150g，脂肪61g，碳水237g",
+    "output": "推荐食材：\n1. Pork, Leg sirloin tip roast, boneless, separable lean and fat, cooked, braised 300g（蛋白质93.3g，脂肪7.7g，碳水0.0g）\n2. Macaroni, vegetable, enriched, cooked 400g（蛋白质18.1g，脂肪0.4g，碳水106.4g）\n3. Cassava, raw 150g（蛋白质2.0g，脂肪0.4g，碳水57.1g）\n4. Pie, vanilla cream, prepared from recipe 225g（蛋白质10.8g，脂肪32.4g，碳水73.3g）\n5. Shortening, special purpose for baking, soybean (hydrogenated) palm and cottonseed 50g（蛋白质0.0g，脂肪50.0g，碳水0.0g）"
+  },
+  {
+    "input": "蛋白质187g，脂肪34g，碳水134g",
+    "output": "推荐食材：\n1. Poultry, mechanically deboned, from backs and necks with skin, raw 300g（蛋白质34.2g，脂肪74.2g，碳水0.0g）\n2. Bread, whole-wheat, prepared from recipe, toasted 237g（蛋白质21.8g，脂肪14.0g，碳水133.7g）\n3. Tomatoes, red, ripe, cooked, stewed 150g（蛋白质2.9g，脂肪4.0g，碳水19.6g）\n4. Beef, New Zealand, imported, knuckle, cooked, fast fried 200g（蛋白质55.0g，脂肪15.2g，碳水0.0g）"
+  },
+  {
+    "input": "蛋白质181g，脂肪38g，碳水206g",
+    "output": "推荐食材：\n1. Turkey, breast, from whole bird, meat only, with added solution, roasted 300g（蛋白质80.9g，脂肪6.2g，碳水0.0g）\n2. Cereals ready-to-eat, QUAKER, QUAKER Puffed Wheat 269g（蛋白质43.7g，脂肪5.8g，碳水205.5g）\n3. Seaweed, wakame, raw 100g（蛋白质3.0g，脂肪0.6g，碳水9.1g）\n4. Salad dressing, thousand island dressing, fat-free 100g（蛋白质0.6g，脂肪1.4g，碳水29.3g）"
+  },
+  {
+    "input": "蛋白质85g，脂肪23g，碳水383g",
+    "output": "推荐食材：\n1. Beef, chuck, clod roast, separable lean only, trimmed to 0\" fat, select, cooked, roasted 300g（蛋白质84.3g，脂肪17.5g，碳水0.0g）\n2. Noodles, egg, spinach, enriched, cooked 400g（蛋白质20.2g，脂肪6.3g，碳水97.0g）\n3. Corn, sweet, white, frozen, kernels cut off cob, boiled, drained, with salt 150g（蛋白质4.1g，脂肪0.6g，碳水29.3g）\n4. Crackers, cheese, sandwich-type with cheese filling 300g（蛋白质26.8g，脂肪73.2g，碳水176.3g）"
+  },
+  {
+    "input": "蛋白质168g，脂肪88g，碳水221g",
+    "output": "推荐食材：\n1. Lamb, New Zealand, imported, rack - fully frenched, separable lean only, raw 300g（蛋白质61.8g，脂肪21.4g，碳水0.0g）\n2. Bread, potato 400g（蛋白质50.0g，脂肪12.5g，碳水188.3g）\n3. Chayote, fruit, cooked, boiled, drained, with salt 150g（蛋白质0.9g，脂肪0.7g，碳水6.8g）\n4. Fish, tuna, yellowfin, fresh, cooked, dry heat 189g（蛋白质55.1g，脂肪1.1g，碳水0.0g）\n5. Seeds, pumpkin and squash seeds, whole, roasted, with salt added 100g（蛋白质18.6g，脂肪19.4g，碳水53.8g）"
+  },
+  {
+    "input": "蛋白质101g，脂肪28g，碳水283g",
+    "output": "推荐食材：\n1. Quail, meat and skin, raw 300g（蛋白质58.9g，脂肪36.1g，碳水0.0g）\n2. Wheat flour, white (industrial), 13% protein, bleached, unenriched 391g（蛋白质51.1g，脂肪5.4g，碳水282.3g）\n3. Turnip greens, frozen, cooked, boiled, drained, without salt 100g（蛋白质3.4g，脂肪0.4g，碳水5.0g）"
+  },
+  {
+    "input": "蛋白质58g，脂肪69g，碳水160g",
+    "output": "推荐食材：\n1. Pork, cured, ham -- water added, shank, bone-in, separable lean only, unheated 300g（蛋白质56.0g，脂肪5.6g，碳水2.1g）\n2. Cereals, corn grits, white, regular and quick, enriched, dry 202g（蛋白质15.5g，脂肪3.5g，碳水159.8g）\n3. Vinespinach, (basella), raw 150g（蛋白质2.7g，脂肪0.5g，碳水5.1g）\n4. Creamy dressing, made with sour cream and/or buttermilk and oil, reduced calorie, fat-free 100g（蛋白质1.4g，脂肪2.7g，碳水20.0g）"
+  },
+  {
+    "input": "蛋白质141g，脂肪47g，碳水333g",
+    "output": "推荐食材：\n1. Beans, french, mature seeds, raw 300g（蛋白质56.4g，脂肪6.1g，碳水192.3g）\n2. Crackers, rusk toast 400g（蛋白质54.0g，脂肪28.8g，碳水289.2g）\n3. Cowpeas, leafy tips, cooked, boiled, drained, with salt 100g（蛋白质4.7g，脂肪0.1g，碳水2.8g）"
+  },
+  {
+    "input": "蛋白质59g，脂肪60g，碳水293g",
+    "output": "推荐食材：\n1. Beef, composite of trimmed retail cuts, separable lean only, trimmed to 1/8\" fat, choice, raw 268g（蛋白质59.0g，脂肪16.2g，碳水0.0g）\n2. Cookies, chocolate sandwich, with creme filling, special dietary 400g（蛋白质18.0g，脂肪88.4g，碳水272.0g）\n3. Spinach souffle 200g（蛋白质15.8g，脂肪25.9g，碳水11.8g）"
+  },
+  {
+    "input": "蛋白质115g，脂肪76g，碳水381g",
+    "output": "推荐食材：\n1. Fish, milkfish, raw 300g（蛋白质61.6g，脂肪20.2g，碳水0.0g）\n2. Cereals, CREAM OF WHEAT, regular (10 minute), cooked with water, without salt 400g（蛋白质5.8g，脂肪0.8g，碳水42.1g）\n3. Sweet Potatoes, french fried, crosscut, frozen, unprepared 150g（蛋白质2.5g，脂肪16.6g，碳水38.3g）\n4. Beans, great northern, mature seeds, cooked, boiled, with salt 200g（蛋白质16.7g，脂肪0.9g，碳水42.2g）\n5. Croutons, plain 300g（蛋白质35.7g，脂肪19.8g，碳水220.5g）"
+  },
+  {
+    "input": "蛋白质181g，脂肪65g，碳水188g",
+    "output": "推荐食材：\n1. Pork, fresh, loin, center loin (roasts), bone-in, separable lean only, cooked, roasted 300g（蛋白质85.7g，脂肪23.9g，碳水0.0g）\n2. Cookies, gingersnaps 244g（蛋白质13.7g，脂肪23.9g，碳水187.6g）\n3. Turnip greens and turnips, frozen, cooked, boiled, drained, with salt 100g（蛋白质3.0g，脂肪0.4g，碳水4.7g）\n4. Crustaceans, lobster, northern, cooked, moist heat 200g（蛋白质38.0g，脂肪1.7g，碳水0.0g）"
+  },
+  {
+    "input": "蛋白质183g，脂肪77g，碳水334g",
+    "output": "推荐食材：\n1. Beef, Australian, imported, Wagyu, loin, tenderloin steak/roast, boneless, separable lean and fat, Aust. marble score 4/5, raw 300g（蛋白质59.1g，脂肪42.3g，碳水0.0g）\n2. Corn flour, masa, unenriched, white 400g（蛋白质33.8g，脂肪14.8g，碳水306.4g）\n3. Tree fern, cooked, without salt 200g（蛋白质0.6g，脂肪0.1g，碳水22.0g）\n4. Chicken, dark meat, thigh, meat only, with added solution, cooked, roasted 200g（蛋白质48.5g，脂肪15.5g，碳水0.0g）"
+  },
+  {
+    "input": "蛋白质97g，脂肪62g，碳水158g",
+    "output": "推荐食材：\n1. Veal, variety meats and by-products, brain, cooked, braised 300g（蛋白质34.4g，脂肪28.9g，碳水0.0g）\n2. Cornmeal, yellow, self-rising, bolted, with wheat flour added, enriched 215g（蛋白质18.1g，脂肪6.1g，碳水157.9g）\n3. Peppers, jalapeno, raw 200g（蛋白质1.8g，脂肪0.7g，碳水13.0g）\n4. Emu, inside drum, raw 191g（蛋白质42.4g，脂肪2.8g，碳水0.0g）\n5. Oil, industrial, soy (partially hydrogenated), multiuse for non-dairy butter flavor 50g（蛋白质0.0g，脂肪50.0g，碳水0.0g）"
+  },
+  {
+    "input": "蛋白质166g，脂肪71g，碳水150g",
+    "output": "推荐食材：\n1. Lamb, Australian, imported, fresh, leg, trotter off, bone-in, separable lean only, trimmed to 1/8\" fat, raw 300g（蛋白质69.3g，脂肪13.0g，碳水0.0g）\n2. Vital wheat gluten 400g（蛋白质300.6g，脂肪7.4g，碳水55.2g）\n3. Brussels sprouts, frozen, cooked, boiled, drained, without salt 100g（蛋白质3.6g，脂肪0.4g，碳水8.3g）\n4. Teff, cooked 300g（蛋白质11.6g，脂肪1.9g，碳水59.6g）\n5. Creamy dressing, made with sour cream and/or buttermilk and oil, reduced calorie, cholesterol-free 100g（蛋白质1.0g，脂肪8.0g，碳水16.0g）"
+  },
+  {
+    "input": "蛋白质125g，脂肪30g，碳水213g",
+    "output": "推荐食材：\n1. Mollusks, oyster, eastern, wild, cooked, moist heat 300g（蛋白质34.3g，脂肪10.3g，碳水16.4g）\n2. Pasta, fresh-refrigerated, plain, as purchased 389g（蛋白质44.0g，脂肪8.9g，碳水212.9g）\n3. Sweet potato leaves, raw 150g（蛋白质3.7g，脂肪0.8g，碳水13.2g）\n4. Chicken, broilers or fryers, leg, meat only, cooked, fried 151g（蛋白质42.9g，脂肪14.1g，碳水1.0g）"
+  },
+  {
+    "input": "蛋白质172g，脂肪22g，碳水107g",
+    "output": "推荐食材：\n1. Pork, Shoulder breast, boneless, separable lean and fat, cooked, broiled 300g（蛋白质85.4g，脂肪13.5g，碳水0.0g）\n2. Cake, cheesecake, commercially prepared 400g（蛋白质22.0g，脂肪90.0g，碳水102.0g）\n3. Pumpkin pie mix, canned 150g（蛋白质1.6g，脂肪0.2g，碳水39.6g）\n4. Pork, fresh, loin, top loin (chops), boneless, separable lean and fat, cooked, pan-fried 200g（蛋白质58.7g，脂肪15.7g，碳水0.0g）"
+  },
+  {
+    "input": "蛋白质197g，脂肪76g，碳水377g",
+    "output": "推荐食材：\n1. Beef, loin, top loin steak, boneless, lip off, separable lean and fat, trimmed to 0\" fat, select, cooked, grilled 300g（蛋白质87.5g，脂肪27.4g，碳水0.0g）\n2. Cookies, vanilla sandwich with creme filling 400g（蛋白质18.0g，脂肪80.0g，碳水288.4g）\n3. Broccoli, flower clusters, raw 200g（蛋白质6.0g，脂肪0.7g，碳水10.1g）\n4. Chicken, broilers or fryers, leg, meat only, cooked, roasted 200g（蛋白质48.4g，脂肪15.6g，碳水0.0g）"
+  },
+  {
+    "input": "蛋白质182g，脂肪73g，碳水395g",
+    "output": "推荐食材：\n1. Beef, chuck, arm pot roast, separable lean and fat, trimmed to 1/8\" fat, choice, raw 300g（蛋白质57.4g，脂肪55.7g，碳水0.0g）\n2. Cereals, CREAM OF WHEAT, 2 1/2 minute cook time, dry 400g（蛋白质46.4g，脂肪5.6g，碳水287.2g）\n3. Beans, kidney, mature seeds, sprouted, cooked, boiled, drained, without salt 100g（蛋白质4.8g，脂肪0.6g，碳水4.7g）\n4. SILK Plus Omega-3 DHA, soymilk 200g（蛋白质5.8g，脂肪4.1g，碳水6.6g）"
+  },
+  {
+    "input": "蛋白质138g，脂肪70g，碳水381g",
+    "output": "推荐食材：\n1. Turkey, ground, fat free, pan-broiled crumbles 300g（蛋白质95.1g，脂肪8.1g，碳水0.0g）\n2. Semolina, enriched 400g（蛋白质50.7g，脂肪4.2g，碳水291.3g）\n3. Squash, winter, butternut, frozen, unprepared 100g（蛋白质1.8g，脂肪0.1g，碳水14.4g）\n4. Seeds, sunflower seed kernels, oil roasted, with salt added 100g（蛋白质20.1g，脂肪51.3g，碳水22.9g）"
+  },
+  {
+    "input": "蛋白质138g，脂肪47g，碳水259g",
+    "output": "推荐食材：\n1. Soymilk, chocolate and other flavors, light, with added calcium, vitamins A and D 300g（蛋白质6.3g，脂肪1.9g，碳水24.7g）\n2. Cereals ready-to-eat, POST, GREAT GRAINS Crunchy Pecan Cereal 354g（蛋白质31.9g，脂肪37.2g，碳水258.4g）\n3. Potatoes, french fried, steak fries, salt added in processing, frozen, as purchased 100g（蛋白质2.2g，脂肪3.4g，碳水23.5g）\n4. Pork, cured, ham and water product, slice, boneless, separable lean and fat, heated, pan-broil 200g（蛋白质30.2g，脂肪10.3g，碳水9.4g）"
+  },
+  {
+    "input": "蛋白质118g，脂肪27g，碳水183g",
+    "output": "推荐食材：\n1. Veal, shoulder, blade, separable lean only, cooked, roasted 300g（蛋白质76.9g，脂肪20.6g，碳水0.0g）\n2. Rolls, dinner, plain, prepared from recipe, made with low fat (2%) milk 342g（蛋白质29.1g，脂肪25.0g，碳水182.6g）\n3. Yeast extract spread 150g（蛋白质35.8g，脂肪1.4g，碳水30.6g）"
+  },
+  {
+    "input": "蛋白质165g，脂肪98g，碳水148g",
+    "output": "推荐食材：\n1. Ostrich, oyster, cooked 300g（蛋白质86.4g，脂肪11.9g，碳水0.0g）\n2. Rice, white, long-grain, regular, cooked, unenriched, with salt 400g（蛋白质10.8g，脂肪1.1g，碳水112.7g）\n3. Squash, summer, zucchini, includes skin, frozen, cooked, boiled, drained, without salt 200g（蛋白质2.3g，脂肪0.3g，碳水7.1g）\n4. Beef, loin, tenderloin steak, boneless, separable lean only, trimmed to 0\" fat, select, cooked, grilled 200g（蛋白质62.2g，脂肪14.5g，碳水0.0g）\n5. Nuts, ginkgo nuts, dried 100g（蛋白质10.3g，脂肪2.0g，碳水72.5g）"
+  },
+  {
+    "input": "蛋白质111g，脂肪58g，碳水279g",
+    "output": "推荐食材：\n1. Veal, cubed for stew (leg and shoulder), separable lean only, raw 300g（蛋白质60.8g，脂肪7.5g，碳水0.0g）\n2. Cookies, vanilla wafers, higher fat 384g（蛋白质18.8g，脂肪63.0g，碳水278.8g）\n3. Lettuce, green leaf, raw 100g（蛋白质1.4g，脂肪0.1g，碳水2.9g）"
+  },
+  {
+    "input": "蛋白质159g，脂肪33g，碳水399g",
+    "output": "推荐食材：\n1. Beef, chuck for stew, separable lean and fat, all grades, raw 300g（蛋白质65.2g，脂肪13.4g，碳水0.5g）\n2. Danish pastry, fruit, enriched (includes apple, cinnamon, raisin, lemon, raspberry, strawberry) 400g（蛋白质21.6g，脂肪74.0g，碳水191.2g）\n3. Gourd, white-flowered (calabash), raw 200g（蛋白质1.2g，脂肪0.0g，碳水6.8g）\n4. Pork, fresh, variety meats and by-products, ears, frozen, raw 200g（蛋白质44.9g，脂肪30.2g，碳水1.2g）\n5. Wheat flour, white, all-purpose, enriched, calcium-fortified 261g（蛋白质27.0g，脂肪2.6g，碳水199.2g）"
+  },
+  {
+    "input": "蛋白质51g，脂肪45g，碳水262g",
+    "output": "推荐食材：\n1. Fish, seatrout, mixed species, cooked, dry heat 237g（蛋白质50.9g，脂肪11.0g，碳水0.0g）\n2. Cereals ready-to-eat, QUAKER, QUAKER Puffed Wheat 342g（蛋白质55.6g，脂肪7.4g，碳水261.3g）\n3. Broccoli, cooked, boiled, drained, without salt 150g（蛋白质3.6g，脂肪0.6g，碳水10.8g）\n4. Nuts, chestnuts, japanese, raw 100g（蛋白质2.2g，脂肪0.5g，碳水34.9g）"
+  },
+  {
+    "input": "蛋白质56g，脂肪99g，碳水281g",
+    "output": "推荐食材：\n1. Lamb, New Zealand, imported, frozen, foreshank, separable lean and fat, trimmed to 1/8\" fat, raw 300g（蛋白质54.1g，脂肪48.5g，碳水0.0g）\n2. Cake, chocolate, prepared from recipe without frosting 400g（蛋白质21.2g，脂肪60.4g，碳水213.6g）\n3. Taro, tahitian, raw 200g（蛋白质5.6g，脂肪1.9g，碳水13.8g）"
+  },
+  {
+    "input": "蛋白质108g，脂肪95g，碳水267g",
+    "output": "推荐食材：\n1. Fish, rockfish, Pacific, mixed species, raw 300g（蛋白质55.1g，脂肪4.0g，碳水0.0g）\n2. Bread, whole-wheat, commercially prepared, toasted 400g（蛋白质65.1g，脂肪16.3g，碳水204.6g）\n3. Cabbage, chinese (pe-tsai), cooked, boiled, drained, with salt 150g（蛋白质2.2g，脂肪0.3g，碳水3.6g）\n4. Seeds, sesame butter, tahini, type of kernels unspecified 100g（蛋白质17.4g，脂肪53.0g，碳水21.5g）"
+  },
+  {
+    "input": "蛋白质60g，脂肪85g，碳水201g",
+    "output": "推荐食材：\n1. Beef, loin, top sirloin petite roast/filet, boneless, separable lean only, trimmed to 0\" fat, select, raw 260g（蛋白质59.9g，脂肪8.7g，碳水0.0g）\n2. Cereals ready-to-eat, GENERAL MILLS, CHEERIOS 274g（蛋白质34.0g，脂肪18.1g，碳水200.6g）\n3. Pickle relish, hot dog 150g（蛋白质2.2g，脂肪0.7g，碳水35.0g）\n4. Margarine-like spread, SMART BEAT Smart Squeeze 100g（蛋白质0.0g，脂肪2.1g，碳水7.1g）"
+  },
+  {
+    "input": "蛋白质135g，脂肪99g，碳水333g",
+    "output": "推荐食材：\n1. Veal, shoulder, whole (arm and blade), separable lean only, raw 300g（蛋白质59.4g，脂肪9.0g，碳水0.0g）\n2. Rolls, hamburger or hot dog, whole wheat 400g（蛋白质49.5g，脂肪17.5g，碳水179.7g）\n3. Spinach, frozen, chopped or leaf, cooked, boiled, drained, without salt 100g（蛋白质4.0g，脂肪0.9g，碳水4.8g）\n4. Rice, brown, parboiled, dry, UNCLE BEN'S 188g（蛋白质14.3g，脂肪5.2g，碳水147.9g）\n5. Seeds, cottonseed flour, partially defatted (glandless) 100g（蛋白质41.0g，脂肪6.2g，碳水40.5g）"
+  },
+  {
+    "input": "蛋白质101g，脂肪79g，碳水300g",
+    "output": "推荐食材：\n1. Beans, kidney, red, mature seeds, canned, drained solids, rinsed in tap water 300g（蛋白质24.4g，脂肪2.8g，碳水62.4g）\n2. Waffles, plain, prepared from recipe 400g（蛋白质31.6g，脂肪56.4g，碳水131.6g）\n3. Corn, sweet, white, canned, whole kernel, drained solids 100g（蛋白质2.3g，脂肪1.2g，碳水14.3g）\n4. Guinea hen, meat only, raw 200g（蛋白质41.3g，脂肪4.9g，碳水0.0g）\n5. Cereals ready-to-eat, MOM'S BEST, Honey Nut TOASTY O'S 114g（蛋白质9.8g，脂肪5.1g，碳水91.0g）"
+  },
+  {
+    "input": "蛋白质73g，脂肪73g，碳水315g",
+    "output": "推荐食材：\n1. Beef, round, tip round, roast, separable lean and fat, trimmed to 0\" fat, select, raw 300g（蛋白质62.4g，脂肪18.8g，碳水0.0g）\n2. Pillsbury, Cinnamon Rolls with Icing, refrigerated dough 400g（蛋白质17.4g，脂肪45.1g，碳水213.7g）\n3. Soybeans, mature seeds, sprouted, cooked, steamed, with salt 150g（蛋白质12.7g，脂肪6.7g，碳水9.8g）"
+  },
+  {
+    "input": "蛋白质83g，脂肪57g，碳水343g",
+    "output": "推荐食材：\n1. Beans, kidney, all types, mature seeds, raw 300g（蛋白质70.7g，脂肪2.5g，碳水180.0g）\n2. Cake, coffeecake, cinnamon with crumb topping, commercially prepared, unenriched 400g（蛋白质27.2g，脂肪93.2g，碳水186.8g）\n3. Mustard spinach, (tendergreen), raw 150g（蛋白质3.3g，脂肪0.5g，碳水5.8g）"
+  },
+  {
+    "input": "蛋白质55g，脂肪36g，碳水276g",
+    "output": "推荐食材：\n1. Beef, top loin petite roast/filet, boneless, separable lean only, trimmed to 1/8\" fat, select, raw 241g（蛋白质54.9g，脂肪11.8g，碳水0.0g）\n2. Pie, pecan, commercially prepared 400g（蛋白质18.0g，脂肪66.8g，碳水238.4g）\n3. Cassava, raw 100g（蛋白质1.4g，脂肪0.3g，碳水38.1g）"
+  },
+  {
+    "input": "蛋白质154g，脂肪79g，碳水124g",
+    "output": "推荐食材：\n1. Beef, composite of trimmed retail cuts, separable lean only, trimmed to 1/8\" fat, select, cooked 300g（蛋白质82.5g，脂肪19.1g，碳水0.0g）\n2. Bread, raisin, enriched 237g（蛋白质18.7g，脂肪10.4g，碳水124.0g）\n3. Potatoes, frozen, french fried, par fried, extruded, unprepared 100g（蛋白质2.8g，脂肪14.9g，碳水30.1g）\n4. Pork, fresh, loin, top loin (chops), boneless, separable lean and fat, cooked, broiled 187g（蛋白质49.8g，脂肪17.1g，碳水0.0g）"
+  },
+  {
+    "input": "蛋白质33g，脂肪84g，碳水335g",
+    "output": "推荐食材：\n1. Lamb, Australian, imported, fresh, leg, hindshank, heel on, bone-in, separable lean and fat, trimmed to 1/8\" fat, cooked, braised 111g（蛋白质32.8g，脂肪10.5g，碳水0.0g）\n2. Bread, stuffing, cornbread, dry mix 400g（蛋白质40.0g，脂肪16.8g，碳水306.8g）\n3. Peas, green, canned, drained solids, rinsed in tap water 200g（蛋白质8.7g，脂肪1.9g，碳水23.6g）\n4. Nuts, pecans, dry roasted, with salt added 73g（蛋白质6.9g，脂肪54.2g，碳水9.9g）"
+  },
+  {
+    "input": "蛋白质88g，脂肪21g，碳水116g",
+    "output": "推荐食材：\n1. Pork, cured, ham -- water added, whole, boneless, separable lean and fat, heated, roasted 300g（蛋白质53.3g，脂肪16.4g，碳水4.6g）\n2. Wheat, soft red winter 156g（蛋白质16.1g，脂肪2.4g，碳水115.8g）\n3. Yambean (jicama), raw 150g（蛋白质1.1g，脂肪0.1g，碳水13.2g）"
+  },
+  {
+    "input": "蛋白质159g，脂肪43g，碳水127g",
+    "output": "推荐食材：\n1. Lamb, Australian, imported, fresh, foreshank, separable lean and fat, trimmed to 1/8\" fat, raw 300g（蛋白质56.5g，脂肪38.0g，碳水0.0g）\n2. Cereals, oats, regular and quick, unenriched, cooked with water (includes boiling and microwaving), without salt 400g（蛋白质10.2g，脂肪6.1g，碳水48.0g）\n3. Coriander (cilantro) leaves, raw 200g（蛋白质4.3g，脂肪1.0g，碳水7.3g）\n4. Beef, New Zealand, imported, tenderloin, separable lean only, cooked, fast fried 200g（蛋白质58.7g，脂肪18.0g，碳水0.5g）\n5. Bread, salvadoran sweet cheese (quesadilla salvadorena) 148g（蛋白质10.5g，脂肪25.3g，碳水70.8g）"
+  },
+  {
+    "input": "蛋白质36g，脂肪53g，碳水391g",
+    "output": "推荐食材：\n1. Mollusks, oyster, Pacific, raw 300g（蛋白质28.4g，脂肪6.9g，碳水14.8g）\n2. Bread, white, commercially prepared, low sodium, no salt 400g（蛋白质32.8g，脂肪14.4g，碳水198.4g）\n3. Lima beans, immature seeds, frozen, baby, cooked, boiled, drained, with salt 200g（蛋白质13.3g，脂肪0.6g，碳水38.9g）\n4. Bagels, oat bran 260g（蛋白质27.8g，脂肪3.1g，碳水138.6g）\n5. Nuts, walnuts, glazed 78g（蛋白质6.5g，脂肪27.9g，碳水37.1g）"
+  },
+  {
+    "input": "蛋白质161g，脂肪52g，碳水107g",
+    "output": "推荐食材：\n1. Game meat, squirrel, cooked, roasted 300g（蛋白质92.3g，脂肪14.1g，碳水0.0g）\n2. Cream puff, eclair, custard or cream filled, iced 285g（蛋白质12.6g，脂肪52.8g，碳水106.7g）\n3. Potatoes, microwaved, cooked in skin, flesh and skin, without salt 150g（蛋白质3.7g，脂肪0.1g，碳水36.4g）\n4. Lamb, New Zealand, imported, flap, boneless, separable lean and fat, cooked, braised 200g（蛋白质41.0g，脂肪65.3g，碳水0.3g）"
+  },
+  {
+    "input": "蛋白质126g，脂肪34g，碳水286g",
+    "output": "推荐食材：\n1. Chicken, broilers or fryers, breast, meat and skin, cooked, roasted 300g（蛋白质89.4g，脂肪23.3g，碳水0.0g）\n2. Cereals ready-to-eat, POST, GREAT GRAINS Crunchy Pecan Cereal 391g（蛋白质35.2g，脂肪41.1g，碳水285.4g）\n3. Corn, sweet, white, cooked, boiled, drained, with salt 100g（蛋白质3.3g，脂肪1.4g，碳水21.7g）"
+  }
+]
