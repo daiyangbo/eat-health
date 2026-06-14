@@ -634,12 +634,33 @@
                 <div class="step-content">
                     <div class="step-title">安装 LLaMA-Factory</div>
                     <div class="step-description">
-                        安装 LLaMA-Factory 微调框架，用于 SFT 训练。
+                        安装 LLaMA-Factory 微调框架，用于 SFT 训练。需要使用兼容 Python 3.10 的版本。
                     </div>
                     <div class="command-block">
-                        <div class="command">git clone https://github.com/hiyouga/LLaMA-Factory.git</div>
+                        <div class="comment"># 清理旧版本（如果存在）</div>
+                        <div class="command">rm -rf /root/pip_packages/llamafactory</div>
+                        <div class="command">rm -rf /root/eat-health/LLaMA-Factory</div>
+                        <br>
+                        <div class="comment"># 克隆兼容版本（v0.9.3，支持 Python 3.10）</div>
+                        <div class="command">cd /root/eat-health</div>
+                        <div class="command">git clone --branch v0.9.3 https://ghfast.top/https://github.com/hiyouga/LLaMA-Factory.git</div>
+                        <br>
+                        <div class="comment"># 安装到系统目录</div>
                         <div class="command">cd LLaMA-Factory</div>
-                        <div class="command">pip install -e .</div>
+                        <div class="command">pip install -e . --no-cache-dir</div>
+                    </div>
+                    <div class="step-details">
+                        <h4>为什么要用 v0.9.3 版本？</h4>
+                        <ul>
+                            <li>最新版 LLaMA-Factory 需要 Python 3.11+</li>
+                            <li>AutoDL 默认是 Python 3.10，不兼容</li>
+                            <li>v0.9.3 支持 Python 3.10，稳定可靠</li>
+                        </ul>
+                        <h4>为什么要用镜像站？</h4>
+                        <ul>
+                            <li>GitHub 直连很慢，容易超时</li>
+                            <li>ghproxy.net 是 GitHub 镜像站，速度快</li>
+                        </ul>
                     </div>
                     <div class="step-meta">
                         <span class="meta-tag time">⏱️ 预计 5-10 分钟</span>
@@ -703,8 +724,19 @@
                         使用 LLaMA-Factory 进行监督微调训练。
                     </div>
                     <div class="command-block">
-                        <div class="command">cd LLaMA-Factory</div>
-                        <div class="command">llamafactory-cli train ../train_config.yaml</div>
+                        <div class="comment"># 进入项目根目录</div>
+                        <div class="command">cd /root/eat-health</div>
+                        <br>
+                        <div class="comment"># 运行训练（使用 Python 模块方式）</div>
+                        <div class="command">python -m llamafactory.cli train /root/eat-health/train_config.yaml</div>
+                    </div>
+                    <div class="step-details">
+                        <h4>为什么要用 python -m 方式？</h4>
+                        <ul>
+                            <li>llamafactory-cli 命令可能找不到</li>
+                            <li>使用 Python 模块方式更可靠</li>
+                            <li>需要在项目根目录运行</li>
+                        </ul>
                     </div>
                     <div class="step-details">
                         <h4>训练参数详解：</h4>
@@ -874,11 +906,22 @@
                     <div class="command">export PYTHONPATH=/root/pip_packages:$PYTHONPATH</div>
                     <div class="command">export HF_ENDPOINT=https://hf-mirror.com</div>
                     <br>
-                    <div class="comment"># 步骤 5：一键训练</div>
-                    <div class="command">python train.py</div>
+                    <div class="comment"># 步骤 5：安装 LLaMA-Factory（兼容 Python 3.10 的版本）</div>
+                    <div class="command">rm -rf /root/pip_packages/llamafactory</div>
+                    <div class="command">rm -rf /root/eat-health/LLaMA-Factory</div>
+                    <div class="command">git clone --branch v0.9.3 https://ghfast.top/https://github.com/hiyouga/LLaMA-Factory.git</div>
+                    <div class="command">cd LLaMA-Factory</div>
+                    <div class="command">pip install -e . --no-cache-dir</div>
+                    <br>
+                    <div class="comment"># 步骤 6：转换数据格式</div>
+                    <div class="command">cd /root/eat-health</div>
+                    <div class="command">python convert_to_llama_factory.py</div>
+                    <br>
+                    <div class="comment"># 步骤 7：运行训练</div>
+                    <div class="command">python -m llamafactory.cli train /root/eat-health/train_config.yaml</div>
                 </div>
                 <p style="font-size: 1rem; margin-top: 16px; opacity: 0.9;">
-                    train.py 会自动执行：转换数据 → 下载模型 → 安装 LLaMA-Factory → 训练 → 测试
+                    注意：train.py 中的自动安装 LLaMA-Factory 步骤可能失败，建议手动执行步骤 5
                 </p>
             </div>
         </div>
@@ -939,11 +982,23 @@
             </div>
             <div class="checklist-item">
                 <input type="checkbox" id="check6">
-                <label for="check6">已安装依赖（安装到 /root 目录）</label>
+                <label for="check6">已安装依赖：pip install -r requirements.txt --target /root/pip_packages --no-cache-dir</label>
             </div>
             <div class="checklist-item">
                 <input type="checkbox" id="check7">
-                <label for="check7">已设置 HuggingFace 镜像：export HF_ENDPOINT=https://hf-mirror.com</label>
+                <label for="check7">已设置环境变量：export PYTHONPATH=/root/pip_packages:$PYTHONPATH</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="check8">
+                <label for="check8">已设置 HuggingFace 镜像：export HF_ENDPOINT=https://hf-mirror.com</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="check9">
+                <label for="check9">已安装 LLaMA-Factory v0.9.3：git clone --branch v0.9.3 https://ghfast.top/https://github.com/hiyouga/LLaMA-Factory.git</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="check10">
+                <label for="check10">已转换数据格式：python convert_to_llama_factory.py</label>
             </div>
         </div>
 
@@ -988,7 +1043,7 @@
             </div>
 
             <div class="error-card">
-                <h3>问题 3：模型下载失败</h3>
+                <h3>问题 4：模型下载失败</h3>
                 <div class="error-message">ConnectionError 或 TimeoutError</div>
                 <p class="solution">
                     <strong>解决方案：</strong>
@@ -1000,18 +1055,30 @@
             </div>
 
             <div class="error-card">
-                <h3>问题 4：LLaMA-Factory 安装失败</h3>
-                <div class="error-message">pip install 失败或依赖冲突</div>
+                <h3>问题 5：LLaMA-Factory 安装失败</h3>
+                <div class="error-message">ERROR: Package 'llamafactory' requires a different Python: 3.10.8 not in '>=3.11.0'</div>
                 <p class="solution">
+                    <strong>原因：</strong>最新版 LLaMA-Factory 需要 Python 3.11+，但 AutoDL 默认是 Python 3.10。
+                    <br><br>
                     <strong>解决方案：</strong>
-                    <br>1. 升级 pip：<code>pip install --upgrade pip</code>
-                    <br>2. 使用虚拟环境
-                    <br>3. 查看错误日志，安装缺失的依赖
+                    <br>1. 使用兼容版本：<code>git clone --branch v0.9.3 https://ghfast.top/https://github.com/hiyouga/LLaMA-Factory.git</code>
+                    <br>2. 清理旧版本：<code>rm -rf /root/pip_packages/llamafactory</code>
+                    <br>3. 安装到系统目录：<code>pip install -e . --no-cache-dir</code>
                 </p>
             </div>
 
             <div class="error-card">
-                <h3>问题 5：训练速度慢</h3>
+                <h3>问题 6：transformers 版本冲突</h3>
+                <div class="error-message">ImportError: transformers>=4.45.0,<=4.52.4 is required</div>
+                <p class="solution">
+                    <strong>解决方案：</strong>
+                    <br>1. 跳过版本检查：<code>export DISABLE_VERSION_CHECK=1</code>
+                    <br>2. 或降级 transformers：<code>pip install transformers==4.52.4</code>
+                </p>
+            </div>
+
+            <div class="error-card">
+                <h3>问题 7：训练速度慢</h3>
                 <p class="solution">
                     <strong>解决方案：</strong>
                     <br>1. 确认使用了 GPU（检查 nvidia-smi）
@@ -1021,7 +1088,7 @@
             </div>
 
             <div class="error-card">
-                <h3>问题 6：训练 Loss 不下降</h3>
+                <h3>问题 8：训练 Loss 不下降</h3>
                 <p class="solution">
                     <strong>解决方案：</strong>
                     <br>1. 检查数据格式是否正确
@@ -1032,12 +1099,21 @@
             </div>
 
             <div class="error-card">
-                <h3>问题 7：显存占用过高</h3>
+                <h3>问题 9：显存占用过高</h3>
                 <p class="solution">
                     <strong>解决方案：</strong>
                     <br>1. 使用 <code>nvidia-smi</code> 监控显存
                     <br>2. 减小 max_length（如果设置了的话）
                     <br>3. 使用梯度检查点：<code>gradient_checkpointing: true</code>
+                </p>
+            </div>
+
+            <div class="error-card">
+                <h3>问题 10：llamafactory-cli 命令找不到</h3>
+                <div class="error-message">/bin/sh: 1: llamafactory-cli: not found</div>
+                <p class="solution">
+                    <strong>解决方案：</strong>
+                    <br>使用 Python 模块方式运行：<code>python -m llamafactory.cli train /root/eat-health/train_config.yaml</code>
                 </p>
             </div>
         </div>

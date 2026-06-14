@@ -11,8 +11,9 @@ python train.py
 步骤：
 1. 转换数据格式
 2. 下载模型（如果不存在）
-3. 执行训练
-4. 测试模型
+3. 安装 LLaMA-Factory（如果不存在）
+4. 执行训练
+5. 测试模型
 """
 
 import os
@@ -63,8 +64,9 @@ def main():
         print("\n" + "=" * 60)
         print("步骤 3: 安装 LLaMA-Factory")
         print("=" * 60)
-        run_command("git clone https://github.com/hiyouga/LLaMA-Factory.git", cwd=project_root)
-        run_command("pip install -e .", cwd=llama_factory_path)
+        # 使用 ghfast.top 镜像和 v0.9.3 版本（兼容 Python 3.10）
+        run_command("git clone --branch v0.9.3 https://ghfast.top/https://github.com/hiyouga/LLaMA-Factory.git", cwd=project_root)
+        run_command("pip install -e . --no-cache-dir", cwd=llama_factory_path)
     else:
         print(f"\nLLaMA-Factory 已存在: {llama_factory_path}")
         print("跳过安装步骤")
@@ -74,7 +76,8 @@ def main():
     print("步骤 4: 执行训练")
     print("=" * 60)
     config_path = project_root / "train_config.yaml"
-    run_command(f"llamafactory-cli train {config_path}", cwd=llama_factory_path)
+    # 使用 python -m 方式运行（llamafactory-cli 命令可能找不到）
+    run_command(f"python -m llamafactory.cli train {config_path}", cwd=project_root)
 
     # 步骤 5: 测试模型
     print("\n" + "=" * 60)
