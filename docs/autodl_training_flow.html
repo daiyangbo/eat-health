@@ -509,9 +509,12 @@
                         直接从 GitHub 克隆项目，无需手动上传文件。
                     </div>
                     <div class="command-block">
-                        <div class="comment"># 克隆仓库</div>
+                        <div class="comment"># 开启学术加速（重要！）</div>
+                        <div class="command">source /etc/network_turbo</div>
+                        <br>
+                        <div class="comment"># 克隆仓库（如果 GitHub 连接慢，使用镜像站）</div>
                         <div class="command">cd /root</div>
-                        <div class="command">git clone https://github.com/daiyangbo/eat-health.git</div>
+                        <div class="command">git clone https://ghfast.top/https://github.com/daiyangbo/eat-health.git</div>
                         <div class="command">cd eat-health</div>
                     </div>
                     <div class="step-details">
@@ -543,13 +546,27 @@
             <div class="step">
                 <div class="step-number">4</div>
                 <div class="step-content">
-                    <div class="step-title">安装依赖包</div>
+                    <div class="step-title">安装依赖包并设置镜像</div>
                     <div class="step-description">
-                        在 AutoDL 实例上安装项目所需的 Python 包。
+                        在 AutoDL 实例上安装项目所需的 Python 包，并设置 HuggingFace 镜像加速模型下载。
                     </div>
                     <div class="command-block">
+                        <div class="comment"># 进入项目目录</div>
                         <div class="command">cd /root/eat-health</div>
+                        <br>
+                        <div class="comment"># 安装依赖</div>
                         <div class="command">pip install -r requirements.txt</div>
+                        <br>
+                        <div class="comment"># 设置 HuggingFace 镜像（重要！加速模型下载）</div>
+                        <div class="command">export HF_ENDPOINT=https://hf-mirror.com</div>
+                    </div>
+                    <div class="step-details">
+                        <h4>为什么要设置 HuggingFace 镜像？</h4>
+                        <ul>
+                            <li>Qwen2.5-1.5B 模型约 3GB，直接下载很慢</li>
+                            <li>使用镜像可以加速 5-10 倍</li>
+                            <li>这是国内用户的标准做法</li>
+                        </ul>
                     </div>
                     <div class="step-meta">
                         <span class="meta-tag time">⏱️ 预计 5 分钟</span>
@@ -816,22 +833,27 @@
 
         <!-- 一键训练说明 -->
         <div class="summary-card">
-            <h2>🎯 一键训练（推荐）</h2>
+            <h2>🎯 完整命令（复制粘贴即可）</h2>
             <div style="text-align: center; margin-top: 20px;">
                 <p style="font-size: 1.2rem; margin-bottom: 16px;">
-                    如果你想省去手动执行每个步骤的麻烦，可以直接运行：
+                    复制以下所有命令，在 AutoDL 终端中粘贴执行：
                 </p>
                 <div class="command-block" style="background: rgba(0,0,0,0.3); display: inline-block; text-align: left;">
-                    <div class="comment"># 克隆仓库</div>
+                    <div class="comment"># 步骤 1：开启学术加速</div>
+                    <div class="command">source /etc/network_turbo</div>
+                    <br>
+                    <div class="comment"># 步骤 2：克隆仓库</div>
                     <div class="command">cd /root</div>
-                    <div class="command">git clone https://github.com/daiyangbo/eat-health.git</div>
+                    <div class="command">git clone https://ghfast.top/https://github.com/daiyangbo/eat-health.git</div>
                     <div class="command">cd eat-health</div>
                     <br>
-                    <div class="comment"># 安装依赖</div>
+                    <div class="comment"># 步骤 3：安装依赖</div>
                     <div class="command">pip install -r requirements.txt</div>
                     <br>
-                    <div class="comment"># 设置镜像并训练</div>
+                    <div class="comment"># 步骤 4：设置 HuggingFace 镜像</div>
                     <div class="command">export HF_ENDPOINT=https://hf-mirror.com</div>
+                    <br>
+                    <div class="comment"># 步骤 5：一键训练</div>
                     <div class="command">python train.py</div>
                 </div>
                 <p style="font-size: 1rem; margin-top: 16px; opacity: 0.9;">
@@ -880,23 +902,23 @@
             </div>
             <div class="checklist-item">
                 <input type="checkbox" id="check3">
-                <label for="check3">已创建 RTX 4090 GPU 实例（推荐）</label>
+                <label for="check3">已创建 RTX 4090 或 RTX 4090D GPU 实例</label>
             </div>
             <div class="checklist-item">
                 <input type="checkbox" id="check4">
-                <label for="check4">已克隆 GitHub 仓库：git clone https://github.com/daiyangbo/eat-health.git</label>
+                <label for="check4">已开启学术加速：source /etc/network_turbo</label>
             </div>
             <div class="checklist-item">
                 <input type="checkbox" id="check5">
-                <label for="check5">已确认 data/processed/ 下有 train.json、val.json、foods_cleaned.json、dataset_info.json</label>
+                <label for="check5">已克隆仓库：git clone https://ghfast.top/https://github.com/daiyangbo/eat-health.git</label>
             </div>
             <div class="checklist-item">
                 <input type="checkbox" id="check6">
-                <label for="check6">已设置 HuggingFace 镜像（export HF_ENDPOINT=https://hf-mirror.com）</label>
+                <label for="check6">已安装依赖：pip install -r requirements.txt</label>
             </div>
             <div class="checklist-item">
                 <input type="checkbox" id="check7">
-                <label for="check7">已阅读 README_训练说明.md</label>
+                <label for="check7">已设置 HuggingFace 镜像：export HF_ENDPOINT=https://hf-mirror.com</label>
             </div>
         </div>
 
@@ -916,18 +938,30 @@
             </div>
 
             <div class="error-card">
-                <h3>问题 2：模型下载失败</h3>
-                <div class="error-message">ConnectionError 或 TimeoutError</div>
+                <h3>问题 2：GitHub 克隆超时</h3>
+                <div class="error-message">fatal: unable to access: Connection timed out</div>
                 <p class="solution">
                     <strong>解决方案：</strong>
-                    <br>1. 设置 HuggingFace 镜像：<code>export HF_ENDPOINT=https://hf-mirror.com</code>
-                    <br>2. 使用代理
-                    <br>3. 手动下载模型并上传到 ./models/base/qwen2.5-1.5b/
+                    <br>1. 开启学术加速：<code>source /etc/network_turbo</code>
+                    <br>2. 使用镜像站克隆：<code>git clone https://ghfast.top/https://github.com/daiyangbo/eat-health.git</code>
+                    <br>3. 如果还是慢，等几分钟再试
                 </p>
             </div>
 
             <div class="error-card">
-                <h3>问题 3：LLaMA-Factory 安装失败</h3>
+                <h3>问题 3：模型下载失败</h3>
+                <div class="error-message">ConnectionError 或 TimeoutError</div>
+                <p class="solution">
+                    <strong>解决方案：</strong>
+                    <br>1. 设置 HuggingFace 镜像：<code>export HF_ENDPOINT=https://hf-mirror.com</code>
+                    <br>2. 确保已开启学术加速：<code>source /etc/network_turbo</code>
+                    <br>3. 使用代理
+                    <br>4. 手动下载模型并上传到 ./models/base/qwen2.5-1.5b/
+                </p>
+            </div>
+
+            <div class="error-card">
+                <h3>问题 4：LLaMA-Factory 安装失败</h3>
                 <div class="error-message">pip install 失败或依赖冲突</div>
                 <p class="solution">
                     <strong>解决方案：</strong>
@@ -938,7 +972,7 @@
             </div>
 
             <div class="error-card">
-                <h3>问题 4：训练速度慢</h3>
+                <h3>问题 5：训练速度慢</h3>
                 <p class="solution">
                     <strong>解决方案：</strong>
                     <br>1. 确认使用了 GPU（检查 nvidia-smi）
@@ -948,7 +982,7 @@
             </div>
 
             <div class="error-card">
-                <h3>问题 5：训练 Loss 不下降</h3>
+                <h3>问题 6：训练 Loss 不下降</h3>
                 <p class="solution">
                     <strong>解决方案：</strong>
                     <br>1. 检查数据格式是否正确
@@ -959,7 +993,7 @@
             </div>
 
             <div class="error-card">
-                <h3>问题 6：显存占用过高</h3>
+                <h3>问题 7：显存占用过高</h3>
                 <p class="solution">
                     <strong>解决方案：</strong>
                     <br>1. 使用 <code>nvidia-smi</code> 监控显存
