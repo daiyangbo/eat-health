@@ -755,19 +755,24 @@
                                     <td>基座模型路径</td>
                                 </tr>
                                 <tr>
+                                    <td class="param-name">finetuning_type</td>
+                                    <td>lora</td>
+                                    <td>使用 LoRA 微调（节省显存）</td>
+                                </tr>
+                                <tr>
                                     <td class="param-name">num_train_epochs</td>
                                     <td>3</td>
                                     <td>训练轮数（SFT 推荐 3 轮）</td>
                                 </tr>
                                 <tr>
                                     <td class="param-name">per_device_train_batch_size</td>
-                                    <td>4</td>
-                                    <td>每个设备的批次大小</td>
+                                    <td>1</td>
+                                    <td>每个设备的批次大小（RTX 4090 用 1）</td>
                                 </tr>
                                 <tr>
                                     <td class="param-name">gradient_accumulation_steps</td>
-                                    <td>4</td>
-                                    <td>梯度累积步数（有效批次 = 4×4 = 16）</td>
+                                    <td>16</td>
+                                    <td>梯度累积步数（有效批次 = 1×16 = 16）</td>
                                 </tr>
                                 <tr>
                                     <td class="param-name">learning_rate</td>
@@ -801,10 +806,23 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <h4>为什么使用 LoRA？</h4>
+                        <ul>
+                            <li>RTX 4090 显存 24GB，全参数微调会 OOM</li>
+                            <li>LoRA 只训练 0.6% 参数（9M vs 1.5B）</li>
+                            <li>训练速度快，4-5 分钟完成</li>
+                            <li>效果接近全参数微调</li>
+                        </ul>
+                        <h4>为什么批次大小设为 1？</h4>
+                        <ul>
+                            <li>避免 CUDA 显存不足错误</li>
+                            <li>通过梯度累积（16 步）保持有效批次大小</li>
+                            <li>有效批次 = 1 × 16 = 16</li>
+                        </ul>
                     </div>
                     <div class="step-meta">
-                        <span class="meta-tag time">⏱️ 预计 2-3 小时</span>
-                        <span class="meta-tag cost">💰 约 ¥6-9</span>
+                        <span class="meta-tag time">⏱️ 预计 5-10 分钟</span>
+                        <span class="meta-tag cost">💰 约 ¥1-2</span>
                     </div>
                 </div>
             </div>
@@ -917,7 +935,10 @@
                     <div class="command">cd /root/eat-health</div>
                     <div class="command">python convert_to_llama_factory.py</div>
                     <br>
-                    <div class="comment"># 步骤 7：运行训练</div>
+                    <div class="comment"># 步骤 7：修复 transformers 版本</div>
+                    <div class="command">pip install transformers==4.52.4 --target /root/miniconda3/lib/python3.10/site-packages/ --upgrade --force-reinstall --no-deps</div>
+                    <br>
+                    <div class="comment"># 步骤 8：运行训练</div>
                     <div class="command">python -m llamafactory.cli train /root/eat-health/train_config.yaml</div>
                 </div>
                 <p style="font-size: 1rem; margin-top: 16px; opacity: 0.9;">
@@ -932,18 +953,18 @@
             <div class="summary-grid">
                 <div class="summary-item">
                     <div class="icon">⏱️</div>
-                    <div class="label">总预计时间</div>
-                    <div class="value">2-4 小时</div>
+                    <div class="label">训练时间</div>
+                    <div class="value">5-10 分钟</div>
                 </div>
                 <div class="summary-item">
                     <div class="icon">💰</div>
                     <div class="label">预计费用</div>
-                    <div class="value">¥20-40</div>
+                    <div class="value">¥5-10</div>
                 </div>
                 <div class="summary-item">
                     <div class="icon">📁</div>
-                    <div class="label">获取方式</div>
-                    <div class="value">Git 克隆</div>
+                    <div class="label">微调方式</div>
+                    <div class="value">LoRA</div>
                 </div>
                 <div class="summary-item">
                     <div class="icon">🎯</div>
@@ -1008,12 +1029,13 @@
 
             <div class="error-card">
                 <h3>问题 1：CUDA 内存不足</h3>
-                <div class="error-message">RuntimeError: CUDA out of memory</div>
+                <div class="error-message">torch.OutOfMemoryError: CUDA out of memory</div>
                 <p class="solution">
                     <strong>解决方案：</strong>
-                    <br>1. 减小批次大小：修改 train_config.yaml 中的 <code>per_device_train_batch_size: 2</code>
-                    <br>2. 增加梯度累积：<code>gradient_accumulation_steps: 8</code>
-                    <br>3. 使用梯度检查点：添加 <code>gradient_checkpointing: true</code>
+                    <br>1. 使用 LoRA 微调：<code>finetuning_type: lora</code>（推荐，只训练 0.6% 参数）
+                    <br>2. 减小批次大小：<code>per_device_train_batch_size: 1</code>
+                    <br>3. 增加梯度累积：<code>gradient_accumulation_steps: 16</code>
+                    <br>4. 使用梯度检查点：添加 <code>gradient_checkpointing: true</code>
                 </p>
             </div>
 
@@ -1115,6 +1137,43 @@
                     <strong>解决方案：</strong>
                     <br>使用 Python 模块方式运行：<code>python -m llamafactory.cli train /root/eat-health/train_config.yaml</code>
                 </p>
+            </div>
+        </div>
+
+        <!-- 训练结果参考 -->
+        <div class="troubleshooting" style="margin-top: 40px;">
+            <h2>📊 训练结果参考</h2>
+            <div style="background: #e8f5e9; border-radius: 8px; padding: 16px; margin-top: 16px;">
+                <h4 style="color: #2e7d32; margin-bottom: 12px;">✅ 实际训练结果（2026-06-14）</h4>
+                <table class="config-table">
+                    <tbody>
+                        <tr>
+                            <td class="param-name">训练 Loss</td>
+                            <td>1.688</td>
+                            <td>从 1.74 下降到 1.57</td>
+                        </tr>
+                        <tr>
+                            <td class="param-name">验证 Loss</td>
+                            <td>1.566</td>
+                            <td>比训练 Loss 更低，没有过拟合</td>
+                        </tr>
+                        <tr>
+                            <td class="param-name">训练时间</td>
+                            <td>4 分 33 秒</td>
+                            <td>使用 LoRA + RTX 4090</td>
+                        </tr>
+                        <tr>
+                            <td class="param-name">可训练参数</td>
+                            <td>9,232,384</td>
+                            <td>只训练 0.6% 参数</td>
+                        </tr>
+                        <tr>
+                            <td class="param-name">GPU 显存占用</td>
+                            <td>约 20GB</td>
+                            <td>RTX 4090 24GB 够用</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 

@@ -63,16 +63,18 @@ def generate_response(tokenizer, model, instruction, input_text, max_length=512)
     # 编码
     inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
 
-    # 生成
+    # 生成（优化参数，防止重复生成）
     with torch.no_grad():
         outputs = model.generate(
             **inputs,
-            max_new_tokens=512,
-            temperature=0.7,
-            do_sample=True,
-            top_p=0.9,
-            top_k=50,
-            repetition_penalty=1.1
+            max_new_tokens=512,          # 最大生成长度
+            temperature=0.3,             # 降低温度，减少随机性（原0.7）
+            do_sample=True,              # 启用采样
+            top_p=0.85,                  # 核采样（原0.9）
+            top_k=40,                    # Top-K采样（原50）
+            repetition_penalty=1.3,      # 增加重复惩罚（原1.1）
+            no_repeat_ngram_size=3,      # 禁止3-gram重复
+            early_stopping=True          # 早停
         )
 
     # 解码（只取新生成的部分）
@@ -102,19 +104,19 @@ def main():
     # 加载模型
     tokenizer, model = load_model(model_path)
 
-    # 测试用例
+    # 测试用例（优化提示词格式）
     test_cases = [
         {
-            "instruction": "你是一个专业的营养师，根据用户提供的营养目标（蛋白质、脂肪、碳水），推荐合适的食材搭配。请给出具体的食材名称和用量。",
-            "input": "蛋白质150g，脂肪60g，碳水200g"
+            "instruction": "你是一个专业的营养师，专门为学校食堂设计营养餐。请根据用户提供的营养目标，推荐具体的食材搭配和用量。要求：1）推荐3-5种主要食材；2）每种食材给出具体克数；3）确保营养目标大致达标。",
+            "input": "请帮我搭配一餐，营养目标：蛋白质150g，脂肪60g，碳水化合物200g"
         },
         {
-            "instruction": "你是一个专业的营养师，根据用户提供的营养目标（蛋白质、脂肪、碳水），推荐合适的食材搭配。请给出具体的食材名称和用量。",
-            "input": "蛋白质100g，脂肪40g，碳水150g"
+            "instruction": "你是一个专业的营养师，专门为学校食堂设计营养餐。请根据用户提供的营养目标，推荐具体的食材搭配和用量。要求：1）推荐3-5种主要食材；2）每种食材给出具体克数；3）确保营养目标大致达标。",
+            "input": "请帮我搭配一餐，营养目标：蛋白质100g，脂肪40g，碳水化合物150g"
         },
         {
-            "instruction": "你是一个专业的营养师，根据用户提供的营养目标（蛋白质、脂肪、碳水），推荐合适的食材搭配。请给出具体的食材名称和用量。",
-            "input": "蛋白质200g，脂肪80g，碳水300g"
+            "instruction": "你是一个专业的营养师，专门为学校食堂设计营养餐。请根据用户提供的营养目标，推荐具体的食材搭配和用量。要求：1）推荐3-5种主要食材；2）每种食材给出具体克数；3）确保营养目标大致达标。",
+            "input": "请帮我搭配一餐，营养目标：蛋白质200g，脂肪80g，碳水化合物300g"
         }
     ]
 

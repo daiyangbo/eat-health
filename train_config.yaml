@@ -9,15 +9,15 @@ dataset_dir: ./data/processed
 dataset: train_llama
 eval_dataset: val_llama
 template: qwen
-finetuning_type: full
+finetuning_type: lora
 
 # 输出配置
 output_dir: ./models/finetuned
 logging_dir: ./logs
 
 # 训练参数
-per_device_train_batch_size: 4
-gradient_accumulation_steps: 4
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 16
 num_train_epochs: 3
 learning_rate: 1.0e-5
 lr_scheduler_type: cosine
