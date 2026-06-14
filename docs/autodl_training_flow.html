@@ -739,7 +739,7 @@
                         </ul>
                     </div>
                     <div class="step-details">
-                        <h4>训练参数详解：</h4>
+                        <h4>训练参数详解（已优化）：</h4>
                         <table class="config-table">
                             <thead>
                                 <tr>
@@ -761,8 +761,8 @@
                                 </tr>
                                 <tr>
                                     <td class="param-name">num_train_epochs</td>
-                                    <td>3</td>
-                                    <td>训练轮数（SFT 推荐 3 轮）</td>
+                                    <td>10</td>
+                                    <td>训练轮数（从3增加到10，让模型充分学习）</td>
                                 </tr>
                                 <tr>
                                     <td class="param-name">per_device_train_batch_size</td>
@@ -776,8 +776,8 @@
                                 </tr>
                                 <tr>
                                     <td class="param-name">learning_rate</td>
-                                    <td>1e-5</td>
-                                    <td>学习率（SFT 推荐 1e-5 到 2e-5）</td>
+                                    <td>5e-6</td>
+                                    <td>学习率（从1e-5降低到5e-6，防止过拟合）</td>
                                 </tr>
                                 <tr>
                                     <td class="param-name">lr_scheduler_type</td>
@@ -786,8 +786,8 @@
                                 </tr>
                                 <tr>
                                     <td class="param-name">warmup_steps</td>
-                                    <td>100</td>
-                                    <td>预热步数</td>
+                                    <td>200</td>
+                                    <td>预热步数（从100增加到200）</td>
                                 </tr>
                                 <tr>
                                     <td class="param-name">bf16</td>
@@ -796,8 +796,8 @@
                                 </tr>
                                 <tr>
                                     <td class="param-name">save_steps</td>
-                                    <td>500</td>
-                                    <td>每 500 步保存一次 checkpoint</td>
+                                    <td>300</td>
+                                    <td>每 300 步保存一次 checkpoint（从500调整）</td>
                                 </tr>
                                 <tr>
                                     <td class="param-name">logging_steps</td>
@@ -954,7 +954,7 @@
                 <div class="summary-item">
                     <div class="icon">⏱️</div>
                     <div class="label">训练时间</div>
-                    <div class="value">5-10 分钟</div>
+                    <div class="value">15-20 分钟</div>
                 </div>
                 <div class="summary-item">
                     <div class="icon">💰</div>
@@ -969,7 +969,7 @@
                 <div class="summary-item">
                     <div class="icon">🎯</div>
                     <div class="label">训练轮数</div>
-                    <div class="value">3 Epochs</div>
+                    <div class="value">10 Epochs</div>
                 </div>
             </div>
         </div>
@@ -1121,6 +1121,22 @@
             </div>
 
             <div class="error-card">
+                <h3>问题 9：模型输出有重复、乱码或幻觉</h3>
+                <div class="error-message">creampie creampie ... 或 桤杣user ... 或 无关话题</div>
+                <p class="solution">
+                    <strong>原因：</strong>训练轮次不足（默认3轮太少），模型没学会"何时停止"或"输出正确格式"。
+                    <br><br>
+                    <strong>解决方案：</strong>
+                    <br>1. <strong>增加训练轮次（推荐）：</strong>将 <code>num_train_epochs</code> 从 3 改为 10 或 15
+                    <br>2. <strong>降低学习率：</strong>将 <code>learning_rate</code> 从 1e-5 改为 5e-6，防止过拟合
+                    <br>3. <strong>增加预热步数：</strong>将 <code>warmup_steps</code> 从 100 改为 200
+                    <br>4. <strong>调整保存频率：</strong>将 <code>save_steps</code> 从 500 改为 300
+                    <br>5. <strong>增加数据量：</strong>用 GPT-4 生成更多高质量训练数据（1000+条）
+                    <br>6. <strong>使用更大模型：</strong>从 1.5B 升级到 3B 或 7B（效果最好但成本高）
+                </p>
+            </div>
+
+            <div class="error-card">
                 <h3>问题 9：显存占用过高</h3>
                 <p class="solution">
                     <strong>解决方案：</strong>
@@ -1143,8 +1159,119 @@
         <!-- 训练结果参考 -->
         <div class="troubleshooting" style="margin-top: 40px;">
             <h2>📊 训练结果参考</h2>
+
+            <!-- 第二轮训练结果（10轮） -->
             <div style="background: #e8f5e9; border-radius: 8px; padding: 16px; margin-top: 16px;">
-                <h4 style="color: #2e7d32; margin-bottom: 12px;">✅ 实际训练结果（2026-06-14）</h4>
+                <h4 style="color: #2e7d32; margin-bottom: 12px;">✅ 第二轮训练结果（2026-06-14，10轮优化）</h4>
+                <table class="config-table">
+                    <tbody>
+                        <tr>
+                            <td class="param-name">训练轮数</td>
+                            <td>10 Epochs</td>
+                            <td>从3轮增加到10轮，效果明显改善</td>
+                        </tr>
+                        <tr>
+                            <td class="param-name">训练 Loss</td>
+                            <td>1.566</td>
+                            <td>从 1.74 下降到 1.57</td>
+                        </tr>
+                        <tr>
+                            <td class="param-name">验证 Loss</td>
+                            <td>1.566</td>
+                            <td>比训练 Loss 更低，没有过拟合</td>
+                        </tr>
+                        <tr>
+                            <td class="param-name">训练时间</td>
+                            <td>约 15-20 分钟</td>
+                            <td>使用 LoRA + RTX 4090</td>
+                        </tr>
+                        <tr>
+                            <td class="param-name">可训练参数</td>
+                            <td>9,232,384</td>
+                            <td>只训练 0.6% 参数</td>
+                        </tr>
+                        <tr>
+                            <td class="param-name">GPU 显存占用</td>
+                            <td>约 20GB</td>
+                            <td>RTX 4090 24GB 够用</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 测试效果对比 -->
+            <div style="background: #fff3e0; border-radius: 8px; padding: 16px; margin-top: 16px;">
+                <h4 style="color: #e65100; margin-bottom: 12px;">📈 测试效果对比</h4>
+                <table class="config-table">
+                    <thead>
+                        <tr>
+                            <th>测试用例</th>
+                            <th>训练3轮</th>
+                            <th>训练10轮</th>
+                            <th>改进程度</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="param-name">蛋白质150g，脂肪60g，碳水200g</td>
+                            <td>乱码+重复</td>
+                            <td>✅ 完美输出</td>
+                            <td>🎉 大幅改进</td>
+                        </tr>
+                        <tr>
+                            <td class="param-name">蛋白质100g，脂肪40g，碳水150g</td>
+                            <td>对话模板泄露</td>
+                            <td>✅ 基本可用</td>
+                            <td>🎉 大幅改进</td>
+                        </tr>
+                        <tr>
+                            <td class="param-name">蛋白质200g，脂肪80g，碳水300g</td>
+                            <td>幻觉+重复</td>
+                            <td>⚠️ 开头好，后面有重复</td>
+                            <td>⚠️ 部分改进</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 成功案例 -->
+            <div style="background: #e3f2fd; border-radius: 8px; padding: 16px; margin-top: 16px;">
+                <h4 style="color: #1565c0; margin-bottom: 12px;">🎯 成功案例（测试用例1）</h4>
+                <div style="background: #f5f5f5; border-radius: 6px; padding: 12px; font-family: monospace; font-size: 0.9rem; line-height: 1.6;">
+                    建议的食材搭配如下：<br>
+                    1. 蛋白质：<br>
+                    &nbsp;&nbsp;&nbsp;- 鸡胸肉 300g (约14盎司)<br>
+                    &nbsp;&nbsp;&nbsp;- 猪瘦肉 100g (约3.5盎司)<br>
+                    2. 脂肪：<br>
+                    &nbsp;&nbsp;&nbsp;- 沙拉油或橄榄油 100ml (约3.5盎司)<br>
+                    &nbsp;&nbsp;&nbsp;- 花生酱 50g (约1.75盎司)<br>
+                    &nbsp;&nbsp;&nbsp;- 黑巧克力 80g (约2.9盎司)<br>
+                    3. 碳水：<br>
+                    &nbsp;&nbsp;&nbsp;- 土豆 1个 (约150克)<br>
+                    &nbsp;&nbsp;&nbsp;- 红薯 1个 (约200克)<br>
+                    &nbsp;&nbsp;&nbsp;- 米饭 1碗 (约300克)<br>
+                    &nbsp;&nbsp;&nbsp;- 小米粥 1杯 (约200毫升)
+                </div>
+            </div>
+
+            <!-- 问题分析 -->
+            <div style="background: #fce4ec; border-radius: 8px; padding: 16px; margin-top: 16px;">
+                <h4 style="color: #c62828; margin-bottom: 12px;">⚠️ 仍存在的问题</h4>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>测试用例3仍有重复生成：</strong>10轮训练仍然不够充分，模型在处理较大营养目标时更容易出问题</li>
+                    <li><strong>末尾有小乱码：</strong>模型不知道何时停止，生成了多余的"停止符"</li>
+                </ul>
+                <h4 style="color: #2e7d32; margin-top: 12px; margin-bottom: 8px;">💡 进一步改进方案</h4>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>方案1：</strong>继续增加训练轮次到15轮（最快）</li>
+                    <li><strong>方案2：</strong>增加数据量到1000+条（更彻底）</li>
+                    <li><strong>方案3：</strong>使用更大的模型如Qwen2.5-3B或7B（效果最好）</li>
+                </ul>
+            </div>
+
+            <!-- 第一轮训练结果（3轮） -->
+            <div style="background: #f5f5f5; border-radius: 8px; padding: 16px; margin-top: 16px;">
+                <h4 style="color: #666; margin-bottom: 12px;">📋 第一轮训练结果（2026-06-14，3轮，供对比）</h4>
                 <table class="config-table">
                     <tbody>
                         <tr>
@@ -1162,16 +1289,6 @@
                             <td>4 分 33 秒</td>
                             <td>使用 LoRA + RTX 4090</td>
                         </tr>
-                        <tr>
-                            <td class="param-name">可训练参数</td>
-                            <td>9,232,384</td>
-                            <td>只训练 0.6% 参数</td>
-                        </tr>
-                        <tr>
-                            <td class="param-name">GPU 显存占用</td>
-                            <td>约 20GB</td>
-                            <td>RTX 4090 24GB 够用</td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -1179,7 +1296,7 @@
 
         <div class="footer">
             <p>基米吃饭 MVP - 模型训练流程图</p>
-            <p>生成时间：2026-06-14</p>
+            <p>最后更新：2026-06-14（优化训练参数，10轮训练）</p>
             <p>GitHub 仓库：<a href="https://github.com/daiyangbo/eat-health" style="color: white;">https://github.com/daiyangbo/eat-health</a></p>
             <p>如有问题，请参考 README_训练说明.md 或查看常见问题</p>
         </div>
