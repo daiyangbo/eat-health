@@ -554,13 +554,31 @@
                         <div class="comment"># 进入项目目录</div>
                         <div class="command">cd /root/eat-health</div>
                         <br>
-                        <div class="comment"># 安装依赖</div>
-                        <div class="command">pip install -r requirements.txt</div>
+                        <div class="comment"># 清理缓存（释放 / 目录空间）</div>
+                        <div class="command">pip cache purge</div>
+                        <br>
+                        <div class="comment"># 安装依赖到 /root 目录（空间更充足）</div>
+                        <div class="command">pip install -r requirements.txt --target /root/pip_packages --no-cache-dir</div>
+                        <br>
+                        <div class="comment"># 设置 Python 路径</div>
+                        <div class="command">export PYTHONPATH=/root/pip_packages:$PYTHONPATH</div>
                         <br>
                         <div class="comment"># 设置 HuggingFace 镜像（重要！加速模型下载）</div>
                         <div class="command">export HF_ENDPOINT=https://hf-mirror.com</div>
                     </div>
                     <div class="step-details">
+                        <h4>为什么要安装到 /root 目录？</h4>
+                        <ul>
+                            <li>AutoDL 的 / 目录只有 30GB，空间紧张</li>
+                            <li>/root 目录有 98GB，空间充足</li>
+                            <li>PyTorch + CUDA 依赖约 2-3GB，需要足够空间</li>
+                        </ul>
+                        <h4>为什么要用 --no-cache-dir？</h4>
+                        <ul>
+                            <li>不缓存可以节省 2-3GB 磁盘空间</li>
+                            <li>避免把 / 目录撑满</li>
+                            <li>对后续训练没有影响</li>
+                        </ul>
                         <h4>为什么要设置 HuggingFace 镜像？</h4>
                         <ul>
                             <li>Qwen2.5-1.5B 模型约 3GB，直接下载很慢</li>
@@ -569,7 +587,8 @@
                         </ul>
                     </div>
                     <div class="step-meta">
-                        <span class="meta-tag time">⏱️ 预计 5 分钟</span>
+                        <span class="meta-tag time">⏱️ 预计 10 分钟</span>
+                        <span class="meta-tag warning">⚠️ 确保 / 目录有至少 5GB 可用空间</span>
                     </div>
                 </div>
             </div>
@@ -847,10 +866,12 @@
                     <div class="command">git clone https://ghfast.top/https://github.com/daiyangbo/eat-health.git</div>
                     <div class="command">cd eat-health</div>
                     <br>
-                    <div class="comment"># 步骤 3：安装依赖</div>
-                    <div class="command">pip install -r requirements.txt</div>
+                    <div class="comment"># 步骤 3：清理缓存并安装依赖</div>
+                    <div class="command">pip cache purge</div>
+                    <div class="command">pip install -r requirements.txt --target /root/pip_packages --no-cache-dir</div>
                     <br>
-                    <div class="comment"># 步骤 4：设置 HuggingFace 镜像</div>
+                    <div class="comment"># 步骤 4：设置环境变量</div>
+                    <div class="command">export PYTHONPATH=/root/pip_packages:$PYTHONPATH</div>
                     <div class="command">export HF_ENDPOINT=https://hf-mirror.com</div>
                     <br>
                     <div class="comment"># 步骤 5：一键训练</div>
@@ -905,6 +926,10 @@
                 <label for="check3">已创建 RTX 4090 或 RTX 4090D GPU 实例</label>
             </div>
             <div class="checklist-item">
+                <input type="checkbox" id="check3b">
+                <label for="check3b">已扩展存储到 50GB 以上（重要！）</label>
+            </div>
+            <div class="checklist-item">
                 <input type="checkbox" id="check4">
                 <label for="check4">已开启学术加速：source /etc/network_turbo</label>
             </div>
@@ -914,7 +939,7 @@
             </div>
             <div class="checklist-item">
                 <input type="checkbox" id="check6">
-                <label for="check6">已安装依赖：pip install -r requirements.txt</label>
+                <label for="check6">已安装依赖（安装到 /root 目录）</label>
             </div>
             <div class="checklist-item">
                 <input type="checkbox" id="check7">
@@ -945,6 +970,20 @@
                     <br>1. 开启学术加速：<code>source /etc/network_turbo</code>
                     <br>2. 使用镜像站克隆：<code>git clone https://ghfast.top/https://github.com/daiyangbo/eat-health.git</code>
                     <br>3. 如果还是慢，等几分钟再试
+                </p>
+            </div>
+
+            <div class="error-card">
+                <h3>问题 3：磁盘空间不足（No space left on device）</h3>
+                <div class="error-message">OSError: [Errno 28] No space left on device</div>
+                <p class="solution">
+                    <strong>原因：</strong>AutoDL 的 / 目录只有 30GB，PyTorch + CUDA 依赖约 2-3GB，加上缓存可能撑满。
+                    <br><br>
+                    <strong>解决方案：</strong>
+                    <br>1. 扩展存储：在 AutoDL 控制台扩展到 50GB 以上
+                    <br>2. 清理缓存：<code>pip cache purge</code>
+                    <br>3. 安装到 /root 目录：<code>pip install -r requirements.txt --target /root/pip_packages --no-cache-dir</code>
+                    <br>4. 设置 Python 路径：<code>export PYTHONPATH=/root/pip_packages:$PYTHONPATH</code>
                 </p>
             </div>
 
