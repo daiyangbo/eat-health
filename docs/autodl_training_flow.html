@@ -474,15 +474,20 @@
                     <div class="step-details">
                         <h4>推荐配置：</h4>
                         <ul>
-                            <li>GPU：RTX 3090（24GB 显存）</li>
+                            <li>GPU：RTX 4090（24GB 显存，推荐）或 RTX 3090</li>
                             <li>镜像：PyTorch 2.1 + CUDA 11.8 + Python 3.10</li>
                             <li>存储：50GB</li>
                             <li>区域：选择离你最近的（如北京、上海）</li>
                         </ul>
+                        <h4>GPU 对比：</h4>
+                        <ul>
+                            <li>RTX 4090：¥2.5/小时，训练更快（推荐）</li>
+                            <li>RTX 3090：¥1.5/小时，性价比高</li>
+                        </ul>
                     </div>
                     <div class="step-meta">
                         <span class="meta-tag time">⏱️ 预计 5 分钟</span>
-                        <span class="meta-tag cost">💰 ¥1.5/小时</span>
+                        <span class="meta-tag cost">💰 ¥1.5-2.5/小时</span>
                     </div>
                 </div>
             </div>
@@ -499,29 +504,29 @@
             <div class="step">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                    <div class="step-title">上传项目文件</div>
+                    <div class="step-title">克隆 GitHub 仓库（推荐）</div>
                     <div class="step-description">
-                        将本地项目文件上传到 AutoDL 实例。可以通过文件管理器、SCP 或 Git 上传。
+                        直接从 GitHub 克隆项目，无需手动上传文件。
                     </div>
-                    <div class="file-list">
-                        <div class="folder">📂 基米吃饭/</div>
-                        <div class="file">  ├── 📄 convert_to_llama_factory.py</div>
-                        <div class="file">  ├── 📄 train_config.yaml</div>
-                        <div class="file">  ├── 📄 train.py</div>
-                        <div class="file">  ├── 📄 download_model.py</div>
-                        <div class="file">  ├── 📄 test_model.py</div>
-                        <div class="file">  ├── 📄 requirements.txt</div>
-                        <div class="file">  ├── 📄 README_训练说明.md</div>
-                        <div class="file">  ├── 📂 data/</div>
-                        <div class="file">  │   └── 📂 processed/</div>
-                        <div class="file">  │       ├── foods_cleaned.json</div>
-                        <div class="file">  │       ├── train.json</div>
-                        <div class="file">  │       └── val.json</div>
-                        <div class="file">  └── 📂 src/ (可选)</div>
+                    <div class="command-block">
+                        <div class="comment"># 克隆仓库</div>
+                        <div class="command">cd /root</div>
+                        <div class="command">git clone https://github.com/daiyangbo/eat-health.git</div>
+                        <div class="command">cd eat-health</div>
+                    </div>
+                    <div class="step-details">
+                        <h4>仓库包含的文件：</h4>
+                        <ul>
+                            <li>训练脚本：train.py, download_model.py, test_model.py</li>
+                            <li>数据转换：convert_to_llama_factory.py</li>
+                            <li>训练配置：train_config.yaml, dataset_info.json</li>
+                            <li>数据文件：train.json, val.json, foods_cleaned.json</li>
+                            <li>文档：README_训练说明.md, autodl_training_flow.html</li>
+                        </ul>
                     </div>
                     <div class="step-meta">
-                        <span class="meta-tag time">⏱️ 预计 10 分钟</span>
-                        <span class="meta-tag file">📦 总大小约 3-5 MB</span>
+                        <span class="meta-tag time">⏱️ 预计 2 分钟</span>
+                        <span class="meta-tag file">📦 仓库地址：github.com/daiyangbo/eat-health</span>
                     </div>
                 </div>
             </div>
@@ -543,7 +548,7 @@
                         在 AutoDL 实例上安装项目所需的 Python 包。
                     </div>
                     <div class="command-block">
-                        <div class="command">cd /root/基米吃饭</div>
+                        <div class="command">cd /root/eat-health</div>
                         <div class="command">pip install -r requirements.txt</div>
                     </div>
                     <div class="step-meta">
@@ -620,7 +625,7 @@
                 <div class="step-content">
                     <div class="step-title">转换训练数据格式</div>
                     <div class="step-description">
-                        将 train.json 转换为 LLaMA-Factory 支持的格式。
+                        将 train.json 转换为 LLaMA-Factory 支持的格式，并创建 dataset_info.json 配置文件。
                     </div>
                     <div class="command-block">
                         <div class="comment"># convert_to_llama_factory.py</div>
@@ -631,6 +636,12 @@
                         <ul>
                             <li><strong>输入格式：</strong>{"input": "蛋白质150g...", "output": "推荐食材..."}</li>
                             <li><strong>输出格式：</strong>{"instruction": "...", "input": "...", "output": "..."}</li>
+                        </ul>
+                        <h4>生成的文件：</h4>
+                        <ul>
+                            <li>train_llama.json - LLaMA-Factory 格式的训练数据</li>
+                            <li>val_llama.json - LLaMA-Factory 格式的验证数据</li>
+                            <li>dataset_info.json - 数据集配置文件（LLaMA-Factory 必需）</li>
                         </ul>
                     </div>
                     <div class="step-meta">
@@ -788,12 +799,12 @@
                     </div>
                     <div class="command-block">
                         <div class="comment"># 在 AutoDL 上打包</div>
-                        <div class="command">cd /root/基米吃饭/models/finetuned</div>
+                        <div class="command">cd /root/eat-health/models/finetuned</div>
                         <div class="command">tar -czvf ../../finetuned_model.tar.gz .</div>
                         <br>
                         <div class="comment"># 下载到本地（使用 AutoDL 的文件管理器更方便）</div>
                         <div class="comment"># 或使用 SCP</div>
-                        <div class="command">scp -P &lt;端口号&gt; root@&lt;地址&gt;:/root/基米吃饭/finetuned_model.tar.gz .</div>
+                        <div class="command">scp -P &lt;端口号&gt; root@&lt;地址&gt;:/root/eat-health/finetuned_model.tar.gz .</div>
                     </div>
                     <div class="step-meta">
                         <span class="meta-tag time">⏱️ 预计 10 分钟</span>
@@ -811,7 +822,15 @@
                     如果你想省去手动执行每个步骤的麻烦，可以直接运行：
                 </p>
                 <div class="command-block" style="background: rgba(0,0,0,0.3); display: inline-block; text-align: left;">
-                    <div class="command">cd /root/基米吃饭</div>
+                    <div class="comment"># 克隆仓库</div>
+                    <div class="command">cd /root</div>
+                    <div class="command">git clone https://github.com/daiyangbo/eat-health.git</div>
+                    <div class="command">cd eat-health</div>
+                    <br>
+                    <div class="comment"># 安装依赖</div>
+                    <div class="command">pip install -r requirements.txt</div>
+                    <br>
+                    <div class="comment"># 设置镜像并训练</div>
                     <div class="command">export HF_ENDPOINT=https://hf-mirror.com</div>
                     <div class="command">python train.py</div>
                 </div>
@@ -828,17 +847,17 @@
                 <div class="summary-item">
                     <div class="icon">⏱️</div>
                     <div class="label">总预计时间</div>
-                    <div class="value">4-5 小时</div>
+                    <div class="value">2-4 小时</div>
                 </div>
                 <div class="summary-item">
                     <div class="icon">💰</div>
                     <div class="label">预计费用</div>
-                    <div class="value">¥40-50</div>
+                    <div class="value">¥20-40</div>
                 </div>
                 <div class="summary-item">
                     <div class="icon">📁</div>
-                    <div class="label">上传文件</div>
-                    <div class="value">3-5 MB</div>
+                    <div class="label">获取方式</div>
+                    <div class="value">Git 克隆</div>
                 </div>
                 <div class="summary-item">
                     <div class="icon">🎯</div>
@@ -861,15 +880,15 @@
             </div>
             <div class="checklist-item">
                 <input type="checkbox" id="check3">
-                <label for="check3">已创建 RTX 3090 GPU 实例</label>
+                <label for="check3">已创建 RTX 4090 GPU 实例（推荐）</label>
             </div>
             <div class="checklist-item">
                 <input type="checkbox" id="check4">
-                <label for="check4">已上传所有训练文件到 /root/基米吃饭/</label>
+                <label for="check4">已克隆 GitHub 仓库：git clone https://github.com/daiyangbo/eat-health.git</label>
             </div>
             <div class="checklist-item">
                 <input type="checkbox" id="check5">
-                <label for="check5">已确认 train.json、val.json、foods_cleaned.json 存在</label>
+                <label for="check5">已确认 data/processed/ 下有 train.json、val.json、foods_cleaned.json、dataset_info.json</label>
             </div>
             <div class="checklist-item">
                 <input type="checkbox" id="check6">
@@ -953,6 +972,7 @@
         <div class="footer">
             <p>基米吃饭 MVP - 模型训练流程图</p>
             <p>生成时间：2026-06-14</p>
+            <p>GitHub 仓库：<a href="https://github.com/daiyangbo/eat-health" style="color: white;">https://github.com/daiyangbo/eat-health</a></p>
             <p>如有问题，请参考 README_训练说明.md 或查看常见问题</p>
         </div>
     </div>
