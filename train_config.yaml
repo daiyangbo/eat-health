@@ -1,10 +1,10 @@
 # 基米吃饭 - 训练配置文件
 # 用于 LLaMA-Factory SFT 微调
 # 更新日期：2026-06-14
-# 模型升级：1.5B → 7B
+# 模型升级：1.5B → 7B → 8B (Qwen3)
 
 # 模型配置
-model_name_or_path: ./models/base/qwen2.5-7b    # 升级到7B模型
+model_name_or_path: ./models/base/qwen3-8b      # 升级到Qwen3-8B模型
 
 # 数据配置
 dataset_dir: ./data/processed
@@ -21,14 +21,14 @@ logging_dir: ./logs
 per_device_train_batch_size: 1
 gradient_accumulation_steps: 16
 num_train_epochs: 10                # 10轮训练
-learning_rate: 2.0e-6               # 7B模型使用更小的学习率
+learning_rate: 2.0e-6               # 8B模型使用较小的学习率
 lr_scheduler_type: cosine
-warmup_steps: 300                   # 7B模型需要更多预热步骤
+warmup_steps: 300                   # 8B模型需要更多预热步骤
 weight_decay: 0.01
 
-# LoRA配置（7B模型需要更大的rank）
-lora_rank: 16                       # 从8增加到16
-lora_alpha: 32                      # 从16增加到32
+# LoRA配置（8B模型需要更大的rank）
+lora_rank: 16                       # LoRA秩
+lora_alpha: 32                      # LoRA缩放因子
 lora_target: q_proj,v_proj,k_proj,o_proj,gate_proj,up_proj,down_proj
 
 # 保存配置
@@ -42,6 +42,7 @@ report_to: none
 
 # 精度配置
 bf16: true
+tf32: true                          # 启用TF32加速（Ampere及以上GPU）
 
 # 其他配置
 seed: 42

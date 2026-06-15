@@ -408,7 +408,7 @@
 
             <div class="recommend">
                 <h4>💡 核心结论</h4>
-                <p>升级到 <span class="highlight">Qwen2.5-7B</span> 是最佳选择：训练成本增加约10倍，但训练效果提升约4倍，投入产出比最优。</p>
+                <p>升级到 <span class="highlight">Qwen3-8B</span> 是最佳选择：训练成本增加约10倍，但训练效果提升约4倍，投入产出比最优。</p>
             </div>
         </div>
 
@@ -445,7 +445,7 @@
                         <td>1.5GB</td>
                     </tr>
                     <tr class="highlight">
-                        <td><strong>Qwen2.5-7B</strong></td>
+                        <td><strong>Qwen3-8B</strong></td>
                         <td><strong>7B（70亿）</strong></td>
                         <td><strong>14GB</strong></td>
                         <td><strong>14GB</strong></td>
@@ -524,7 +524,7 @@
                         <td><span class="tag blue">可选</span></td>
                     </tr>
                     <tr class="highlight">
-                        <td><strong>Qwen2.5-7B</strong></td>
+                        <td><strong>Qwen3-8B</strong></td>
                         <td><strong>2-3 小时</strong></td>
                         <td><strong>8-10x</strong></td>
                         <td><strong>300步</strong></td>
@@ -605,7 +605,7 @@
                         <td>3-4x</td>
                     </tr>
                     <tr class="highlight">
-                        <td><strong>Qwen2.5-7B</strong></td>
+                        <td><strong>Qwen3-8B</strong></td>
                         <td><strong>2-3 小时</strong></td>
                         <td><strong>¥50-75</strong></td>
                         <td><strong>¥2</strong></td>
@@ -896,7 +896,7 @@
                         <td><span class="tag yellow">⚠️ 勉强</span></td>
                     </tr>
                     <tr class="highlight">
-                        <td><strong>Qwen2.5-7B</strong></td>
+                        <td><strong>Qwen3-8B</strong></td>
                         <td><strong>1000条</strong></td>
                         <td><strong>2000条</strong></td>
                         <td><strong>480条</strong></td>
@@ -1125,13 +1125,13 @@
             <h2><span class="icon">🎯</span> 推荐方案（已执行）</h2>
 
             <div class="recommend">
-                <h4>✅ 已升级到 Qwen2.5-7B</h4>
-                <p>基于分析结果，已将模型从 <span class="highlight">Qwen2.5-1.5B</span> 升级到 <span class="highlight">Qwen2.5-7B</span>。</p>
+                <h4>✅ 已升级到 Qwen3-8B</h4>
+                <p>基于分析结果，已将模型从 <span class="highlight">Qwen2.5-1.5B</span> 升级到 <span class="highlight">Qwen3-8B</span>。</p>
             </div>
 
             <div class="comparison-grid">
                 <div class="comparison-card" style="border: 2px solid #44ff44;">
-                    <h4>✅ 已执行：Qwen2.5-7B</h4>
+                    <h4>✅ 已执行：Qwen3-8B</h4>
                     <div class="value">7B</div>
                     <div class="label">参数规模</div>
                     <p style="margin-top: 12px;">
@@ -1184,13 +1184,13 @@
             <div class="timeline">
                 <div class="timeline-item" style="border-left: 4px solid #44ff44;">
                     <h4>✅ 步骤1：修改配置文件</h4>
-                    <p>修改 train_config.yaml 和 download_model.py，将模型路径从 qwen2.5-1.5b 改为 qwen2.5-7b</p>
+                    <p>修改 train_config.yaml 和 download_model.py，将模型路径改为 qwen3-8b</p>
                     <p><strong>状态</strong>：已完成</p>
                 </div>
 
                 <div class="timeline-item" style="border-left: 4px solid #44ff44;">
-                    <h4>✅ 步骤2：下载7B模型</h4>
-                    <p>在AutoDL上下载 Qwen2.5-7B 模型（约14GB）</p>
+                    <h4>✅ 步骤2：下载Qwen3-8B模型</h4>
+                    <p>在AutoDL上下载 Qwen3-8B 模型（约16GB）</p>
                     <p><strong>状态</strong>：待执行</p>
                 </div>
 
@@ -1202,13 +1202,13 @@
 
                 <div class="timeline-item" style="border-left: 4px solid #44ff44;">
                     <h4>✅ 步骤4：调整训练参数</h4>
-                    <p>根据7B模型调整学习率、LoRA秩等参数</p>
+                    <p>根据Qwen3-8B模型调整学习率、LoRA秩等参数</p>
                     <p><strong>状态</strong>：已完成</p>
                 </div>
 
                 <div class="timeline-item" style="border-left: 4px solid #ffaa00;">
                     <h4>⏳ 步骤5：重新训练模型</h4>
-                    <p>使用7B模型进行训练</p>
+                    <p>使用Qwen3-8B模型进行训练</p>
                     <p><strong>预计时间</strong>：2-3小时</p>
                     <p><strong>预计成本</strong>：¥65</p>
                 </div>
@@ -1276,12 +1276,12 @@
 
         <!-- 总结 -->
         <div class="summary-card">
-            <h2>📊 总结（已升级到7B）</h2>
+            <h2>📊 总结（已升级到Qwen3-8B）</h2>
             <div class="summary-grid">
                 <div class="summary-item">
                     <div class="icon">✅</div>
                     <div class="label">当前模型</div>
-                    <div class="value">Qwen2.5-7B</div>
+                    <div class="value">Qwen3-8B</div>
                 </div>
                 <div class="summary-item">
                     <div class="icon">⏱️</div>
@@ -1313,7 +1313,7 @@
 
         <div class="footer">
             <p>基米吃饭 MVP - 模型升级影响分析</p>
-            <p>最后更新：2026-06-14（已升级到7B模型）</p>
+            <p>最后更新：2026-06-14（已升级到Qwen3-8B模型）</p>
             <p>GitHub 仓库：<a href="https://github.com/daiyangbo/eat-health" style="color: #00d4ff;">https://github.com/daiyangbo/eat-health</a></p>
         </div>
     </div>

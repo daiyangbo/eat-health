@@ -3,7 +3,7 @@
 模型下载脚本
 
 功能：
-下载 Qwen2.5-7B 模型到本地
+下载 Qwen3-8B 模型到本地
 
 使用方法：
 python download_model.py
@@ -12,7 +12,8 @@ python download_model.py
 - 首次运行需要下载模型，请确保网络连接正常
 - 国内用户建议设置 HuggingFace 镜像
   export HF_ENDPOINT=https://hf-mirror.com
-- 模型大小约 14GB，请确保有足够的存储空间
+- 模型大小约 16GB，请确保有足够的存储空间
+- Qwen3-8B 是2025年最新发布的模型，支持思考模式
 """
 
 import os
@@ -54,15 +55,15 @@ def main():
     project_root = Path(__file__).parent
 
     # 模型保存路径
-    save_path = os.path.join(project_root, 'models', 'base', 'qwen2.5-7b')
+    save_path = os.path.join(project_root, 'models', 'base', 'qwen3-8b')
 
     # 模型名称
-    model_name = "Qwen/Qwen2.5-7B"
+    model_name = "Qwen/Qwen3-8B"
 
     print("=" * 50)
-    print("下载 Qwen2.5-7B 模型")
+    print("下载 Qwen3-8B 模型")
     print("=" * 50)
-    print("\n注意：模型大小约 14GB，下载时间可能较长")
+    print("\n注意：模型大小约 16GB，下载时间可能较长")
     print("建议设置 HuggingFace 镜像加速：")
     print("export HF_ENDPOINT=https://hf-mirror.com\n")
 
@@ -87,7 +88,7 @@ def main():
     print(f"\n[2/2] 下载模型...")
     print(f"  模型: {model_name}")
     print(f"  保存到: {save_path}")
-    print(f"  预计大小: ~14GB")
+    print(f"  预计大小: ~16GB")
     model = download_with_retry(
         AutoModelForCausalLM.from_pretrained,
         model_name,
