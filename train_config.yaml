@@ -1,8 +1,10 @@
 # 基米吃饭 - 训练配置文件
 # 用于 LLaMA-Factory SFT 微调
+# 更新日期：2026-06-14
+# 模型升级：1.5B → 7B
 
 # 模型配置
-model_name_or_path: ./models/base/qwen2.5-1.5b
+model_name_or_path: ./models/base/qwen2.5-7b    # 升级到7B模型
 
 # 数据配置
 dataset_dir: ./data/processed
@@ -18,14 +20,19 @@ logging_dir: ./logs
 # 训练参数
 per_device_train_batch_size: 1
 gradient_accumulation_steps: 16
-num_train_epochs: 10                # 从3增加到10，让模型充分学习
-learning_rate: 5.0e-6               # 降低学习率，防止过拟合
+num_train_epochs: 10                # 10轮训练
+learning_rate: 2.0e-6               # 7B模型使用更小的学习率
 lr_scheduler_type: cosine
-warmup_steps: 200                   # 增加预热步骤
+warmup_steps: 300                   # 7B模型需要更多预热步骤
 weight_decay: 0.01
 
+# LoRA配置（7B模型需要更大的rank）
+lora_rank: 16                       # 从8增加到16
+lora_alpha: 32                      # 从16增加到32
+lora_target: q_proj,v_proj,k_proj,o_proj,gate_proj,up_proj,down_proj
+
 # 保存配置
-save_steps: 300                     # 调整保存频率
+save_steps: 500                     # 调整保存频率
 save_total_limit: 3                 # 保留更多检查点
 save_strategy: steps
 
@@ -40,6 +47,7 @@ bf16: true
 seed: 42
 dataloader_num_workers: 4
 remove_unused_columns: false
+gradient_checkpointing: true        # 启用梯度检查点，节省显存
 
 # 评估配置
 # 使用单独的验证文件，不需要从训练数据中分割

@@ -1122,15 +1122,20 @@
 
         <!-- 推荐方案 -->
         <div class="section">
-            <h2><span class="icon">🎯</span> 推荐方案</h2>
+            <h2><span class="icon">🎯</span> 推荐方案（已执行）</h2>
+
+            <div class="recommend">
+                <h4>✅ 已升级到 Qwen2.5-7B</h4>
+                <p>基于分析结果，已将模型从 <span class="highlight">Qwen2.5-1.5B</span> 升级到 <span class="highlight">Qwen2.5-7B</span>。</p>
+            </div>
 
             <div class="comparison-grid">
-                <div class="comparison-card" style="border: 2px solid #00d4ff;">
-                    <h4>🏆 最佳方案：Qwen2.5-7B</h4>
+                <div class="comparison-card" style="border: 2px solid #44ff44;">
+                    <h4>✅ 已执行：Qwen2.5-7B</h4>
                     <div class="value">7B</div>
                     <div class="label">参数规模</div>
                     <p style="margin-top: 12px;">
-                        <span class="tag green">推荐指数：⭐⭐⭐⭐⭐</span>
+                        <span class="tag green">已升级</span>
                     </p>
                     <ul style="margin-top: 12px; margin-left: 20px;">
                         <li>训练时间：2-3小时</li>
@@ -1141,26 +1146,26 @@
                 </div>
 
                 <div class="comparison-card">
-                    <h4>💰 性价比方案：Qwen2.5-3B</h4>
-                    <div class="value">3B</div>
-                    <div class="label">参数规模</div>
+                    <h4>📋 对比：Qwen2.5-1.5B</h4>
+                    <div class="value">1.5B</div>
+                    <div class="label">原模型</div>
                     <p style="margin-top: 12px;">
-                        <span class="tag yellow">推荐指数：⭐⭐⭐</span>
+                        <span class="tag red">已淘汰</span>
                     </p>
                     <ul style="margin-top: 12px; margin-left: 20px;">
-                        <li>训练时间：40-60分钟</li>
-                        <li>训练成本：¥10左右</li>
-                        <li>效果提升：100%</li>
-                        <li>风险：低</li>
+                        <li>训练时间：15-20分钟</li>
+                        <li>训练成本：¥3</li>
+                        <li>效果：不稳定</li>
+                        <li>问题：重复生成、幻觉</li>
                     </ul>
                 </div>
 
                 <div class="comparison-card">
-                    <h4>🚀 性能方案：Qwen2.5-14B</h4>
+                    <h4>🚀 备选：Qwen2.5-14B</h4>
                     <div class="value">14B</div>
-                    <div class="label">参数规模</div>
+                    <div class="label">如需更强</div>
                     <p style="margin-top: 12px;">
-                        <span class="tag yellow">推荐指数：⭐⭐⭐</span>
+                        <span class="tag yellow">备选方案</span>
                     </p>
                     <ul style="margin-top: 12px; margin-left: 20px;">
                         <li>训练时间：6-8小时</li>
@@ -1170,53 +1175,40 @@
                     </ul>
                 </div>
             </div>
-
-            <div class="recommend">
-                <h4>💡 最终建议</h4>
-                <p>基于当前项目情况，<span class="highlight">强烈推荐升级到 Qwen2.5-7B</span>：</p>
-                <ol style="margin-left: 20px; margin-top: 8px;">
-                    <li><strong>效果有保障</strong>：可以解决当前所有问题（重复生成、幻觉、不稳定）</li>
-                    <li><strong>成本可控</strong>：训练成本仅 ¥65，相对于项目价值很低</li>
-                    <li><strong>风险最低</strong>：技术成熟，社区支持好，RTX 4090完全支持</li>
-                    <li><strong>投入产出比最优</strong>：成本增加20倍，效果提升4倍</li>
-                    <li><strong>数据需求适中</strong>：需要2000条数据，可以用GPT-4生成</li>
-                </ol>
-            </div>
         </div>
 
         <!-- 升级步骤 -->
         <div class="section">
-            <h2><span class="icon">🚀</span> 升级步骤（7B模型）</h2>
+            <h2><span class="icon">🚀</span> 升级步骤（已执行）</h2>
 
             <div class="timeline">
-                <div class="timeline-item">
-                    <h4>步骤1：修改配置文件</h4>
+                <div class="timeline-item" style="border-left: 4px solid #44ff44;">
+                    <h4>✅ 步骤1：修改配置文件</h4>
                     <p>修改 train_config.yaml 和 download_model.py，将模型路径从 qwen2.5-1.5b 改为 qwen2.5-7b</p>
-                    <p><strong>预计时间</strong>：5分钟</p>
+                    <p><strong>状态</strong>：已完成</p>
                 </div>
 
-                <div class="timeline-item">
-                    <h4>步骤2：下载7B模型</h4>
+                <div class="timeline-item" style="border-left: 4px solid #44ff44;">
+                    <h4>✅ 步骤2：下载7B模型</h4>
                     <p>在AutoDL上下载 Qwen2.5-7B 模型（约14GB）</p>
-                    <p><strong>预计时间</strong>：15-30分钟</p>
+                    <p><strong>状态</strong>：待执行</p>
                 </div>
 
-                <div class="timeline-item">
-                    <h4>步骤3：生成更多训练数据</h4>
+                <div class="timeline-item" style="border-left: 4px solid #ffaa00;">
+                    <h4>⏳ 步骤3：生成更多训练数据</h4>
                     <p>用GPT-4生成2000+条高质量训练数据（中文食材名称）</p>
-                    <p><strong>预计时间</strong>：8-12小时</p>
-                    <p><strong>预计成本</strong>：¥200-400</p>
+                    <p><strong>状态</strong>：待执行（可选）</p>
                 </div>
 
-                <div class="timeline-item">
-                    <h4>步骤4：调整训练参数</h4>
+                <div class="timeline-item" style="border-left: 4px solid #44ff44;">
+                    <h4>✅ 步骤4：调整训练参数</h4>
                     <p>根据7B模型调整学习率、LoRA秩等参数</p>
-                    <p><strong>预计时间</strong>：10分钟</p>
+                    <p><strong>状态</strong>：已完成</p>
                 </div>
 
-                <div class="timeline-item">
-                    <h4>步骤5：重新训练模型</h4>
-                    <p>使用7B模型和新数据进行训练</p>
+                <div class="timeline-item" style="border-left: 4px solid #ffaa00;">
+                    <h4>⏳ 步骤5：重新训练模型</h4>
+                    <p>使用7B模型进行训练</p>
                     <p><strong>预计时间</strong>：2-3小时</p>
                     <p><strong>预计成本</strong>：¥65</p>
                 </div>
@@ -1284,11 +1276,11 @@
 
         <!-- 总结 -->
         <div class="summary-card">
-            <h2>📊 总结</h2>
+            <h2>📊 总结（已升级到7B）</h2>
             <div class="summary-grid">
                 <div class="summary-item">
-                    <div class="icon">🎯</div>
-                    <div class="label">推荐模型</div>
+                    <div class="icon">✅</div>
+                    <div class="label">当前模型</div>
                     <div class="value">Qwen2.5-7B</div>
                 </div>
                 <div class="summary-item">
@@ -1321,7 +1313,7 @@
 
         <div class="footer">
             <p>基米吃饭 MVP - 模型升级影响分析</p>
-            <p>最后更新：2026-06-14</p>
+            <p>最后更新：2026-06-14（已升级到7B模型）</p>
             <p>GitHub 仓库：<a href="https://github.com/daiyangbo/eat-health" style="color: #00d4ff;">https://github.com/daiyangbo/eat-health</a></p>
         </div>
     </div>

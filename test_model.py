@@ -9,7 +9,7 @@
 python test_model.py
 
 说明：
-- 加载训练后的模型
+- 加载训练后的模型（Qwen2.5-7B）
 - 使用测试用例进行推理
 - 显示生成结果
 """
@@ -21,15 +21,18 @@ import torch
 
 
 def load_model(model_path):
-    """加载模型"""
+    """加载模型（7B模型需要更多显存）"""
     print(f"加载模型: {model_path}")
+    print("注意：7B模型约14GB，加载需要一定时间...")
     tokenizer = AutoTokenizer.from_pretrained(model_path)
     model = AutoModelForCausalLM.from_pretrained(
         model_path,
         torch_dtype=torch.bfloat16,
-        device_map="auto"
+        device_map="auto",
+        low_cpu_mem_usage=True  # 优化内存使用
     )
     print("[OK] 模型加载成功")
+    print(f"模型参数量: {sum(p.numel() for p in model.parameters()) / 1e9:.2f}B")
     return tokenizer, model
 
 
@@ -98,7 +101,7 @@ def main():
         return
 
     print("=" * 60)
-    print("基米吃饭 - 模型测试")
+    print("基米吃饭 - 模型测试（Qwen2.5-7B）")
     print("=" * 60)
 
     # 加载模型

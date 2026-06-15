@@ -3,7 +3,7 @@
 模型下载脚本
 
 功能：
-下载 Qwen2.5-1.5B 模型到本地
+下载 Qwen2.5-7B 模型到本地
 
 使用方法：
 python download_model.py
@@ -12,6 +12,7 @@ python download_model.py
 - 首次运行需要下载模型，请确保网络连接正常
 - 国内用户建议设置 HuggingFace 镜像
   export HF_ENDPOINT=https://hf-mirror.com
+- 模型大小约 14GB，请确保有足够的存储空间
 """
 
 import os
@@ -53,14 +54,17 @@ def main():
     project_root = Path(__file__).parent
 
     # 模型保存路径
-    save_path = os.path.join(project_root, 'models', 'base', 'qwen2.5-1.5b')
+    save_path = os.path.join(project_root, 'models', 'base', 'qwen2.5-7b')
 
     # 模型名称
-    model_name = "Qwen/Qwen2.5-1.5B"
+    model_name = "Qwen/Qwen2.5-7B"
 
     print("=" * 50)
-    print("下载 Qwen2.5-1.5B 模型")
+    print("下载 Qwen2.5-7B 模型")
     print("=" * 50)
+    print("\n注意：模型大小约 14GB，下载时间可能较长")
+    print("建议设置 HuggingFace 镜像加速：")
+    print("export HF_ENDPOINT=https://hf-mirror.com\n")
 
     # 检查是否已下载
     if os.path.exists(save_path) and os.path.exists(os.path.join(save_path, "config.json")):
@@ -83,7 +87,13 @@ def main():
     print(f"\n[2/2] 下载模型...")
     print(f"  模型: {model_name}")
     print(f"  保存到: {save_path}")
-    model = download_with_retry(AutoModelForCausalLM.from_pretrained, model_name)
+    print(f"  预计大小: ~14GB")
+    model = download_with_retry(
+        AutoModelForCausalLM.from_pretrained,
+        model_name,
+        torch_dtype="auto",
+        device_map="cpu"
+    )
     model.save_pretrained(save_path)
     print(f"[OK] 模型下载完成")
 
@@ -101,13 +111,17 @@ def main():
 
     # 计算模型参数量
     total_params = sum(p.numel() for p in model.parameters())
-    print(f"总参数量: {total_params / 1e6:.2f}M")
+    print(f"总参数量: {total_params / 1e9:.2f}B ({total_params / 1e6:.0f}M)")
 
     print("\n" + "=" * 50)
     print("下载完成！")
     print("=" * 50)
     print(f"\n模型已保存到: {save_path}")
     print("可以开始训练了！")
+    print("\n训练命令：")
+    print("  python train.py")
+    print("  或")
+    print("  python -m llamafactory.cli train train_config.yaml")
 
 
 if __name__ == '__main__':
