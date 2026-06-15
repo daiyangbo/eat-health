@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基米吃饭 - 智能营养配餐助手</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero .tagline {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(240, 147, 251, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-white {
+            background: white;
+            border-radius: 20px;
+            margin: 2rem auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1a1a2e;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a2e;
+        }
+
+        .feature-card p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .feature-tag {
+            display: inline-block;
+            background: linear-gradient(120deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        /* How it works */
+        .workflow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .workflow-step {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            min-width: 150px;
+            transition: all 0.3s ease;
+        }
+
+        .workflow-step:hover {
+            transform: scale(1.05);
+        }
+
+        .workflow-step .step-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .workflow-step h4 {
+            font-size: 1rem;
+            color: #1a1a2e;
+        }
+
+        .workflow-arrow {
+            font-size: 2rem;
+            color: #667eea;
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Tech Stack */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .tech-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .tech-card:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .tech-icon {
+            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .tech-info h4 {
+            font-size: 1rem;
+            color: #1a1a2e;
+            margin-bottom: 0.25rem;
+        }
+
+        .tech-info p {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Demo Section */
+        .demo-container {
+            background: #1a1a2e;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            color: white;
+            font-family: 'Courier New', monospace;
+        }
+
+        .demo-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .demo-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .demo-dot.red { background: #ff5f56; }
+        .demo-dot.yellow { background: #ffbd2e; }
+        .demo-dot.green { background: #27ca40; }
+
+        .demo-title {
+            margin-left: 1rem;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        .demo-content {
+            line-height: 1.8;
+        }
+
+        .demo-line {
+            margin: 0.5rem 0;
+        }
+
+        .demo-prompt {
+            color: #27ca40;
+        }
+
+        .demo-input {
+            color: #f093fb;
+        }
+
+        .demo-output {
+            color: #f5576c;
+        }
+
+        .demo-highlight {
+            color: #ffbd2e;
+        }
+
+        /* Target Users */
+        .users-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .user-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .user-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .user-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .user-card h3 {
+            font-size: 1.2rem;
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+        }
+
+        .user-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            border-radius: 20px;
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+            margin: 2rem auto;
+            max-width: 1200px;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a2e;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        footer p {
+            opacity: 0.7;
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: #f093fb;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .workflow {
+                flex-direction: column;
+            }
+
+            .workflow-arrow {
+                transform: rotate(90deg);
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-icon">🍚</div>
+            <h1>基米吃饭</h1>
+            <p class="subtitle">智能营养配餐助手</p>
+            <p class="tagline">输入三大营养素，智能推荐食堂菜品，让你的每一餐都营养均衡</p>
+            <div class="hero-buttons">
+                <a href="#features" class="btn btn-primary">了解功能</a>
+                <a href="#demo" class="btn btn-secondary">查看演示</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">12</div>
+                <div class="stat-label">核心功能</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">覆盖食堂</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">菜品数据</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5万</div>
+                <div class="stat-label">服务学生</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section section-white">
+        <h2 class="section-title">🎯 核心功能</h2>
+        <p class="section-subtitle">12大功能模块，覆盖营养配餐全流程</p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>F1 营养目标输入</h3>
+                <p>手动输入蛋白质、脂肪、碳水克数，精确控制每日营养摄入</p>
+                <span class="feature-tag">核心功能</span>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3>F2 交互式引导</h3>
+                <p>选目标→填体重→系统自动计算，零基础也能轻松上手</p>
+                <span class="feature-tag">核心功能</span>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🍽️</div>
+                <h3>F3 食堂菜品推荐</h3>
+                <p>根据营养目标，智能推荐具体食堂的具体菜品</p>
+                <span class="feature-tag">核心功能</span>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📅</div>
+                <h3>F4 一日三餐分配</h3>
+                <p>将总营养目标合理分配到早餐、午餐、晚餐</p>
+                <span class="feature-tag">核心功能</span>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚖️</div>
+                <h3>F5a 份量调整</h3>
+                <p>支持调整食用份量，如"只吃2/3份"</p>
+                <span class="feature-tag">核心功能</span>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🚫</div>
+                <h3>F5b 食材排除</h3>
+                <p>排除某菜中的特定食材，如"只吃肉丝不吃青椒"</p>
+                <span class="feature-tag">核心功能</span>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚠️</div>
+                <h3>F6 忌口设置</h3>
+                <p>设置全局忌口，如香菜、花生、辣椒等</p>
+                <span class="feature-tag">偏好设置</span>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3>F7 菜品替代</h3>
+                <p>不喜欢某道菜？一键推荐营养相近的替代菜品</p>
+                <span class="feature-tag">偏好设置</span>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3>F8 喜好学习</h3>
+                <p>根据历史选择优化推荐，越用越懂你</p>
+                <span class="feature-tag">智能推荐</span>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>F9 营养对比表</h3>
+                <p>直观展示推荐vs目标的营养差距，一目了然</p>
+                <span class="feature-tag">数据展示</span>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📍</div>
+                <h3>F10 食堂位置指引</h3>
+                <p>告诉你推荐的菜在哪个食堂、哪个窗口</p>
+                <span class="feature-tag">实用功能</span>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>F11 菜品价格显示</h3>
+                <p>显示推荐菜品的价格，帮你控制预算</p>
+                <span class="feature-tag">实用功能</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="section">
+        <h2 class="section-title" style="color: white;">🔄 工作流程</h2>
+        <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">简单四步，智能配餐</p>
+
+        <div class="workflow">
+            <div class="workflow-step">
+                <div class="step-icon">📝</div>
+                <h4>输入目标</h4>
+            </div>
+            <div class="workflow-arrow">→</div>
+            <div class="workflow-step">
+                <div class="step-icon">🤖</div>
+                <h4>AI分析</h4>
+            </div>
+            <div class="workflow-arrow">→</div>
+            <div class="workflow-step">
+                <div class="step-icon">🍽️</div>
+                <h4>推荐菜品</h4>
+            </div>
+            <div class="workflow-arrow">→</div>
+            <div class="workflow-step">
+                <div class="step-icon">✅</div>
+                <h4>营养达标</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="section section-white">
+        <h2 class="section-title">💻 交互演示</h2>
+        <p class="section-subtitle">真实使用场景展示</p>
+
+        <div class="demo-container">
+            <div class="demo-header">
+                <div class="demo-dot red"></div>
+                <div class="demo-dot yellow"></div>
+                <div class="demo-dot green"></div>
+                <span class="demo-title">基米吃饭 - 命令行交互</span>
+            </div>
+            <div class="demo-content">
+                <div class="demo-line"><span class="demo-highlight">========================================</span></div>
+                <div class="demo-line"><span class="demo-highlight">        基米吃饭 - 智能营养配餐助手</span></div>
+                <div class="demo-line"><span class="demo-highlight">========================================</span></div>
+                <div class="demo-line">&nbsp;</div>
+                <div class="demo-line"><span class="demo-prompt">基米吃饭：</span>你好！我是基米，帮你搭配食堂餐食 🍚</div>
+                <div class="demo-line">&nbsp;</div>
+                <div class="demo-line"><span class="demo-prompt">第一步：</span>你的目标是什么？</div>
+                <div class="demo-line">  1. 减脂</div>
+                <div class="demo-line">  2. 维持体重</div>
+                <div class="demo-line">  3. 增肌</div>
+                <div class="demo-line"><span class="demo-input">  > 3</span></div>
+                <div class="demo-line">&nbsp;</div>
+                <div class="demo-line"><span class="demo-prompt">第二步：</span>你的体重是多少（kg）？</div>
+                <div class="demo-line"><span class="demo-input">  > 70</span></div>
+                <div class="demo-line">&nbsp;</div>
+                <div class="demo-line"><span class="demo-prompt">第三步：</span>你的性别是？</div>
+                <div class="demo-line">  1. 男</div>
+                <div class="demo-line">  2. 女</div>
+                <div class="demo-line"><span class="demo-input">  > 1</span></div>
+                <div class="demo-line">&nbsp;</div>
+                <div class="demo-line"><span class="demo-prompt">第四步：</span>你的活动量是？</div>
+                <div class="demo-line">  1. 久坐不动</div>
+                <div class="demo-line">  2. 轻度活动（每周1-3次）</div>
+                <div class="demo-line">  3. 中度活动（每周3-5次）</div>
+                <div class="demo-line">  4. 高度活动（每周6-7次）</div>
+                <div class="demo-line"><span class="demo-input">  > 3</span></div>
+                <div class="demo-line">&nbsp;</div>
+                <div class="demo-line"><span class="demo-highlight">[系统自动计算...]</span></div>
+                <div class="demo-line">&nbsp;</div>
+                <div class="demo-line"><span class="demo-prompt">基米吃饭：</span>根据你的信息，建议每天摄入：</div>
+                <div class="demo-line">  - 蛋白质：<span class="demo-output">150g</span></div>
+                <div class="demo-line">  - 脂肪：<span class="demo-output">60g</span></div>
+                <div class="demo-line">  - 碳水：<span class="demo-output">200g</span></div>
+                <div class="demo-line">&nbsp;</div>
+                <div class="demo-line"><span class="demo-highlight">[正在为你推荐菜品...]</span></div>
+                <div class="demo-line">&nbsp;</div>
+                <div class="demo-line"><span class="demo-prompt">推荐方案：</span></div>
+                <div class="demo-line"><span class="demo-highlight">┌────────────┬──────────┬──────────┬──────────┬──────────┐</span></div>
+                <div class="demo-line"><span class="demo-highlight">│ 菜品       │ 食堂     │ 窗口     │ 蛋白质   │ 价格     │</span></div>
+                <div class="demo-line"><span class="demo-highlight">├────────────┼──────────┼──────────┼──────────┼──────────┤</span></div>
+                <div class="demo-line">│ 红烧鸡腿   │ 桃园食堂 │ 二楼3号  │ 28g      │ ¥8       │</div>
+                <div class="demo-line">│ 清炒西兰花 │ 橘园食堂 │ 二楼1号  │ 5g       │ ¥3       │</div>
+                <div class="demo-line">│ 米饭       │ 桃园食堂 │ 一楼主食 │ 4g       │ ¥1       │</div>
+                <div class="demo-line"><span class="demo-highlight">└────────────┴──────────┴──────────┴──────────┴──────────┘</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="section">
+        <h2 class="section-title" style="color: white;">🛠️ 技术架构</h2>
+        <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">基于 LLM + RAG 的智能推荐系统</p>
+
+        <div class="tech-grid">
+            <div class="tech-card">
+                <div class="tech-icon">🤖</div>
+                <div class="tech-info">
+                    <h4>Qwen2.5-1.5B</h4>
+                    <p>阿里开源大语言模型，中文优秀</p>
+                </div>
+            </div>
+
+            <div class="tech-card">
+                <div class="tech-icon">🔍</div>
+                <div class="tech-info">
+                    <h4>RAG 检索增强</h4>
+                    <p>先检索知识库，再生成推荐</p>
+                </div>
+            </div>
+
+            <div class="tech-card">
+                <div class="tech-icon">📦</div>
+                <div class="tech-info">
+                    <h4>ChromaDB</h4>
+                    <p>轻量级向量数据库，存储菜品信息</p>
+                </div>
+            </div>
+
+            <div class="tech-card">
+                <div class="tech-icon">🧠</div>
+                <div class="tech-info">
+                    <h4>text2vec-chinese</h4>
+                    <p>中文文本向量化模型</p>
+                </div>
+            </div>
+
+            <div class="tech-card">
+                <div class="tech-icon">⚡</div>
+                <div class="tech-info">
+                    <h4>vllm</h4>
+                    <p>高效LLM推理引擎</p>
+                </div>
+            </div>
+
+            <div class="tech-card">
+                <div class="tech-icon">🐍</div>
+                <div class="tech-info">
+                    <h4>Python</h4>
+                    <p>主要开发语言</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Users -->
+    <section class="section section-white">
+        <h2 class="section-title">👥 目标用户</h2>
+        <p class="section-subtitle">西南大学 5 万学生的营养管家</p>
+
+        <div class="users-grid">
+            <div class="user-card">
+                <div class="user-icon">💪</div>
+                <h3>健身学生</h3>
+                <p>想增肌减脂，但不知道食堂吃什么能达到营养目标</p>
+            </div>
+
+            <div class="user-card">
+                <div class="user-icon">🥗</div>
+                <h3>减脂学生</h3>
+                <p>想控制热量摄入，但不知道怎么搭配食堂菜品</p>
+            </div>
+
+            <div class="user-card">
+                <div class="user-icon">🤔</div>
+                <h3>选择困难学生</h3>
+                <p>每天中午不知道吃什么，需要系统推荐</p>
+            </div>
+
+            <div class="user-card">
+                <div class="user-icon">📚</div>
+                <h3>忙碌学生</h3>
+                <p>时间紧张，需要快速决定吃什么</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section">
+        <div class="cta">
+            <h2>🎯 让每一餐都营养均衡</h2>
+            <p>基米吃饭，你的智能营养配餐助手，基于 AI 技术为你量身定制食堂用餐方案</p>
+            <a href="#features" class="btn btn-primary">了解更多功能</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>🍚 基米吃饭 - 智能营养配餐助手</p>
+        <p>西南大学校园项目</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">
+            技术栈：Qwen2.5 + RAG + ChromaDB + Python
+        </p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+            <a href="https://github.com/daiyangbo/eat-health">GitHub</a> | 2026
+        </p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .tech-card, .user-card, .stat-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

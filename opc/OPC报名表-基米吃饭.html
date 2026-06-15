@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPC创业者入驻申请表 - 基米吃饭</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "SimSun", "宋体", serif;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        /* Download Button - Hidden when printing */
+        .download-section {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            color: white;
+        }
+
+        .download-section h2 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .download-section p {
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-download {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-save {
+            background: #27ca40;
+            color: white;
+        }
+
+        .btn-save:hover {
+            background: #1ea834;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(39,202,64,0.3);
+        }
+
+        .btn-clear {
+            background: #ff5f56;
+            color: white;
+        }
+
+        .btn-clear:hover {
+            background: #e04848;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,95,86,0.3);
+        }
+
+        .btn svg {
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        /* Tips */
+        .tips {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: #856404;
+        }
+
+        /* Form Container */
+        .form-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Header */
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #333;
+        }
+
+        .form-header h1 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .form-header .subtitle {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .form-header .subtitle input {
+            border: none;
+            border-bottom: 1px solid #999;
+            font-size: 14px;
+            text-align: center;
+            width: 150px;
+            padding: 2px 5px;
+            font-family: inherit;
+        }
+
+        /* Table Styles */
+        .form-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .form-table th,
+        .form-table td {
+            border: 1px solid #333;
+            padding: 10px 12px;
+            vertical-align: top;
+            text-align: left;
+        }
+
+        .form-table th {
+            background: #f0f0f0;
+            font-weight: bold;
+            width: 120px;
+            white-space: nowrap;
+        }
+
+        .form-table td {
+            min-height: 40px;
+        }
+
+        /* Input Styles */
+        .form-input {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #999;
+            font-size: 14px;
+            padding: 5px 0;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus {
+            border-bottom-color: #667eea;
+        }
+
+        .form-input-short {
+            width: 60%;
+        }
+
+        /* Textarea Styles */
+        .form-textarea {
+            width: 100%;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            padding: 10px;
+            font-family: inherit;
+            outline: none;
+            resize: vertical;
+            min-height: 150px;
+            transition: border-color 0.3s;
+        }
+
+        .form-textarea:focus {
+            border-color: #667eea;
+        }
+
+        /* Checkbox Styles */
+        .checkbox-group {
+            margin: 5px 0;
+        }
+
+        .checkbox-item {
+            display: inline-block;
+            margin-right: 15px;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            display: none;
+        }
+
+        .checkbox {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #333;
+            margin-right: 5px;
+            vertical-align: middle;
+            position: relative;
+            transition: all 0.2s;
+        }
+
+        .checkbox-item input[type="checkbox"]:checked + .checkbox {
+            background: #667eea;
+            border-color: #667eea;
+        }
+
+        .checkbox-item input[type="checkbox"]:checked + .checkbox::after {
+            content: '✓';
+            position: absolute;
+            top: -3px;
+            left: 2px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .checkbox-item:hover .checkbox {
+            border-color: #667eea;
+        }
+
+        /* Other Input */
+        .other-input {
+            border: none;
+            border-bottom: 1px solid #999;
+            font-size: 13px;
+            width: 100px;
+            padding: 2px 5px;
+            font-family: inherit;
+            outline: none;
+        }
+
+        .other-input:focus {
+            border-bottom-color: #667eea;
+        }
+
+        /* Section Title */
+        .section-title {
+            background: #e8e8e8;
+            font-weight: bold;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        /* Signature Area */
+        .signature-area {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .signature-box {
+            width: 45%;
+        }
+
+        .signature-line {
+            border-bottom: 1px solid #333;
+            height: 50px;
+            margin-top: 10px;
+        }
+
+        .signature-date {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .signature-date input {
+            border: none;
+            border-bottom: 1px solid #999;
+            font-size: 12px;
+            width: 80px;
+            text-align: center;
+            font-family: inherit;
+            outline: none;
+        }
+
+        /* Footer */
+        .form-footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+        }
+
+        /* Save Status */
+        .save-status {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #27ca40;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            display: none;
+            z-index: 1000;
+            animation: fadeInOut 2s ease;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(-20px); }
+            20% { opacity: 1; transform: translateY(0); }
+            80% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-20px); }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                font-size: 12px;
+            }
+
+            .download-section,
+            .tips,
+            .save-status {
+                display: none !important;
+            }
+
+            .form-container {
+                box-shadow: none;
+                padding: 20px;
+                max-width: 100%;
+            }
+
+            .form-table th,
+            .form-table td {
+                padding: 8px 10px;
+            }
+
+            .form-header h1 {
+                font-size: 20px;
+            }
+
+            .form-input,
+            .form-textarea,
+            .other-input {
+                border-bottom: none;
+                border: none;
+            }
+
+            .form-textarea {
+                min-height: auto;
+            }
+
+            /* Ensure page breaks work properly */
+            .form-table {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 20px;
+            }
+
+            .form-table th {
+                width: 80px;
+                font-size: 12px;
+            }
+
+            .form-table td {
+                font-size: 12px;
+            }
+
+            .signature-area {
+                flex-direction: column;
+            }
+
+            .signature-box {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Save Status -->
+    <div class="save-status" id="saveStatus">✓ 已保存到本地</div>
+
+    <!-- Download Section -->
+    <div class="download-section">
+        <h2>📄 OPC创业者入驻申请表</h2>
+        <p>填写完成后点击"下载PDF"保存文件（在打印对话框中选择"另存为PDF"）</p>
+        <div class="btn-group">
+            <button class="btn btn-save" onclick="saveToLocalStorage()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                    <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                    <polyline points="7 3 7 8 15 8"></polyline>
+                </svg>
+                保存草稿
+            </button>
+            <button class="btn btn-download" onclick="downloadPDF()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                下载PDF
+            </button>
+            <button class="btn btn-clear" onclick="clearForm()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="3 6 5 6 21 6"></polyline>
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                </svg>
+                清空表单
+            </button>
+        </div>
+    </div>
+
+    <!-- Tips -->
+    <div class="tips" style="max-width: 900px; margin: 0 auto 20px;">
+        💡 <strong>提示：</strong>所有带下划线的字段都可以直接点击编辑。填写完成后可以点击"保存草稿"在浏览器本地保存，下次打开自动恢复。
+    </div>
+
+    <!-- Form Container -->
+    <div class="form-container">
+        <!-- Form Header -->
+        <div class="form-header">
+            <h1>OPC创业者入驻申请表</h1>
+            <p class="subtitle">
+                填报单位/个人：<input type="text" id="reportUnit" value="西南大学学生团队" class="form-input" style="width: 150px; display: inline-block;">
+                &nbsp;&nbsp;&nbsp;
+                填报日期：<input type="text" id="reportDate" value="2026年6月13日" class="form-input" style="width: 120px; display: inline-block;">
+            </p>
+        </div>
+
+        <!-- Form Table -->
+        <table class="form-table">
+            <!-- Row 1: 区县 -->
+            <tr>
+                <th>区县</th>
+                <td colspan="10">
+                    <input type="text" id="district" value="北碚区" class="form-input">
+                </td>
+            </tr>
+
+            <!-- Row 2: 对象类别 -->
+            <tr>
+                <th>对象类别</th>
+                <td colspan="10">
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="cat_student" checked>
+                            <span class="checkbox"></span>高校学生
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="cat_freelancer">
+                            <span class="checkbox"></span>自由职业者
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="cat_developer">
+                            <span class="checkbox"></span>独立开发者
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="cat_researcher">
+                            <span class="checkbox"></span>科研人员
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="cat_innovator">
+                            <span class="checkbox"></span>创新实践者
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="cat_company">
+                            <span class="checkbox"></span>一人公司
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="cat_other">
+                            <span class="checkbox"></span>其他
+                            <input type="text" id="cat_other_text" class="other-input" placeholder="请填写">
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Row 3: 创业者姓名/团队名称 -->
+            <tr>
+                <th>创业者姓名/<br>团队名称</th>
+                <td colspan="10">
+                    <input type="text" id="teamName" value="基米吃饭团队（西南大学学生）" class="form-input">
+                </td>
+            </tr>
+
+            <!-- Row 4: 联系人、联系电话 -->
+            <tr>
+                <th>联系人</th>
+                <td colspan="4">
+                    <input type="text" id="contactName" placeholder="请填写负责人姓名" class="form-input">
+                </td>
+                <th>联系电话</th>
+                <td colspan="5">
+                    <input type="text" id="contactPhone" placeholder="请填写联系电话" class="form-input">
+                </td>
+            </tr>
+
+            <!-- Row 5: 电子邮箱 -->
+            <tr>
+                <th>电子邮箱</th>
+                <td colspan="10">
+                    <input type="text" id="contactEmail" placeholder="请填写电子邮箱" class="form-input">
+                </td>
+            </tr>
+
+            <!-- Row 6: 所属领域 -->
+            <tr>
+                <th>所属领域<br>（可多选）</th>
+                <td colspan="10">
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="field_xr">
+                            <span class="checkbox"></span>XR大空间
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="field_embodied">
+                            <span class="checkbox"></span>AI具身智能
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="field_drama">
+                            <span class="checkbox"></span>AI漫剧短剧
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="field_ecommerce">
+                            <span class="checkbox"></span>AI电子商务
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="field_driving">
+                            <span class="checkbox"></span>AI自动驾驶
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="field_lowalt">
+                            <span class="checkbox"></span>AI低空经济
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="field_gov">
+                            <span class="checkbox"></span>AI政务服务
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="field_game">
+                            <span class="checkbox"></span>AI游戏电竞
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="field_agent" checked>
+                            <span class="checkbox"></span>AI智能体开发
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="field_other">
+                            <span class="checkbox"></span>其他
+                            <input type="text" id="field_other_text" class="other-input" placeholder="请填写">
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Row 7: 项目产品介绍 -->
+            <tr>
+                <th>项目产品<br>介绍</th>
+                <td colspan="10">
+                    <textarea id="projectIntro" class="form-textarea" rows="15">项目名称：基米吃饭 - 基于大语言模型的校园智能营养配餐助手
+
+项目背景：当前大学生群体中，健身、减脂、控制营养的需求日益增长，但大多数学生面临以下痛点：①选择困难：食堂菜品丰富，不知道吃什么；②营养困惑：想控制营养但不知道如何搭配；③信息缺失：不清楚食堂菜品的具体营养成分。
+
+产品功能："基米吃饭"是一款基于AI大语言模型（LLM）和检索增强生成（RAG）技术的智能营养配餐系统，主要功能包括：营养目标输入、交互式引导、食堂菜品推荐、一日三餐分配、份量调整、食材排除、忌口设置、菜品替代、喜好学习、营养对比表、食堂位置指引、菜品价格显示等12大核心功能。
+
+技术架构：基座模型采用Qwen2.5-1.5B（阿里开源大语言模型），结合RAG检索增强技术、ChromaDB向量数据库、text2vec-chinese文本向量化、vllm推理引擎，使用Python开发。
+
+目标用户：西南大学在校学生（约5万人），特别是健身学生、减脂学生、选择困难学生和忙碌学生。
+
+发展规划：MVP版本（验证核心能力）→ V1.0版本（第一个食堂上线）→ V1.5版本（片区食堂覆盖）→ V2.0版本（全校食堂覆盖）。</textarea>
+                </td>
+            </tr>
+
+            <!-- Row 8: 当前阶段 -->
+            <tr>
+                <th>当前阶段</th>
+                <td colspan="10">
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="stage_idea">
+                            <span class="checkbox"></span>创意阶段
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="stage_dev" checked>
+                            <span class="checkbox"></span>产品研发
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="stage_product">
+                            <span class="checkbox"></span>已有产品
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="stage_biz">
+                            <span class="checkbox"></span>已商业化
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="stage_other">
+                            <span class="checkbox"></span>其他
+                            <input type="text" id="stage_other_text" class="other-input" placeholder="请填写">
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Row 9: 核心需求 -->
+            <tr>
+                <th>核心需求<br>（可多选）</th>
+                <td colspan="10">
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="need_policy" checked>
+                            <span class="checkbox"></span>政策申报
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="need_compute" checked>
+                            <span class="checkbox"></span>算力支持
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="need_space">
+                            <span class="checkbox"></span>办公空间
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="need_scene" checked>
+                            <span class="checkbox"></span>场景对接
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="need_funding">
+                            <span class="checkbox"></span>投资融资
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="need_incubation" checked>
+                            <span class="checkbox"></span>孵化辅导
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="need_talent">
+                            <span class="checkbox"></span>人才招募
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="need_other">
+                            <span class="checkbox"></span>其他
+                            <input type="text" id="need_other_text" class="other-input" placeholder="请填写">
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Row 10: 备注 -->
+            <tr>
+                <th>备注<br>（其他补充<br>说明）</th>
+                <td colspan="10">
+                    <textarea id="remarks" class="form-textarea" rows="6">1. 项目基于LLM+RAG技术，面向西南大学5万学生，解决校园食堂营养配餐问题
+2. 项目创新性：首个基于LLM+RAG的校园营养配餐系统
+3. 社会价值：促进学生健康饮食，响应"健康中国"战略
+4. 可扩展性：可推广到其他高校，具有广阔市场前景</textarea>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Signature Area -->
+        <div class="signature-area">
+            <div class="signature-box">
+                <p>申请人/团队负责人签字：</p>
+                <div class="signature-line"></div>
+                <p class="signature-date">
+                    日期：<input type="text" id="signDate1" placeholder="年">年
+                    <input type="text" id="signDate2" placeholder="月">月
+                    <input type="text" id="signDate3" placeholder="日">日
+                </p>
+            </div>
+            <div class="signature-box">
+                <p>所在单位/学校意见（盖章）：</p>
+                <div class="signature-line"></div>
+                <p class="signature-date">
+                    日期：<input type="text" id="signDate4" placeholder="年">年
+                    <input type="text" id="signDate5" placeholder="月">月
+                    <input type="text" id="signDate6" placeholder="日">日
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="form-footer">
+            <p>重庆市教育委员会 &nbsp;|&nbsp; 2026年6月</p>
+            <p style="margin-top: 5px;">提交截止时间：2026年6月17日17:00前 &nbsp;|&nbsp; 邮箱：jyqsqxxzb@163.com</p>
+        </div>
+    </div>
+
+    <script>
+        // Local Storage Key
+        const STORAGE_KEY = 'opc_form_data';
+
+        // Save form data to localStorage
+        function saveToLocalStorage() {
+            const formData = {
+                // Basic info
+                reportUnit: document.getElementById('reportUnit').value,
+                reportDate: document.getElementById('reportDate').value,
+                district: document.getElementById('district').value,
+                teamName: document.getElementById('teamName').value,
+                contactName: document.getElementById('contactName').value,
+                contactPhone: document.getElementById('contactPhone').value,
+                contactEmail: document.getElementById('contactEmail').value,
+
+                // Category checkboxes
+                cat_student: document.getElementById('cat_student').checked,
+                cat_freelancer: document.getElementById('cat_freelancer').checked,
+                cat_developer: document.getElementById('cat_developer').checked,
+                cat_researcher: document.getElementById('cat_researcher').checked,
+                cat_innovator: document.getElementById('cat_innovator').checked,
+                cat_company: document.getElementById('cat_company').checked,
+                cat_other: document.getElementById('cat_other').checked,
+                cat_other_text: document.getElementById('cat_other_text').value,
+
+                // Field checkboxes
+                field_xr: document.getElementById('field_xr').checked,
+                field_embodied: document.getElementById('field_embodied').checked,
+                field_drama: document.getElementById('field_drama').checked,
+                field_ecommerce: document.getElementById('field_ecommerce').checked,
+                field_driving: document.getElementById('field_driving').checked,
+                field_lowalt: document.getElementById('field_lowalt').checked,
+                field_gov: document.getElementById('field_gov').checked,
+                field_game: document.getElementById('field_game').checked,
+                field_agent: document.getElementById('field_agent').checked,
+                field_other: document.getElementById('field_other').checked,
+                field_other_text: document.getElementById('field_other_text').value,
+
+                // Project intro
+                projectIntro: document.getElementById('projectIntro').value,
+
+                // Stage checkboxes
+                stage_idea: document.getElementById('stage_idea').checked,
+                stage_dev: document.getElementById('stage_dev').checked,
+                stage_product: document.getElementById('stage_product').checked,
+                stage_biz: document.getElementById('stage_biz').checked,
+                stage_other: document.getElementById('stage_other').checked,
+                stage_other_text: document.getElementById('stage_other_text').value,
+
+                // Need checkboxes
+                need_policy: document.getElementById('need_policy').checked,
+                need_compute: document.getElementById('need_compute').checked,
+                need_space: document.getElementById('need_space').checked,
+                need_scene: document.getElementById('need_scene').checked,
+                need_funding: document.getElementById('need_funding').checked,
+                need_incubation: document.getElementById('need_incubation').checked,
+                need_talent: document.getElementById('need_talent').checked,
+                need_other: document.getElementById('need_other').checked,
+                need_other_text: document.getElementById('need_other_text').value,
+
+                // Remarks
+                remarks: document.getElementById('remarks').value,
+
+                // Signature dates
+                signDate1: document.getElementById('signDate1').value,
+                signDate2: document.getElementById('signDate2').value,
+                signDate3: document.getElementById('signDate3').value,
+                signDate4: document.getElementById('signDate4').value,
+                signDate5: document.getElementById('signDate5').value,
+                signDate6: document.getElementById('signDate6').value,
+            };
+
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+
+            // Show save status
+            const status = document.getElementById('saveStatus');
+            status.style.display = 'block';
+            setTimeout(() => {
+                status.style.display = 'none';
+            }, 2000);
+        }
+
+        // Load form data from localStorage
+        function loadFromLocalStorage() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (!saved) return;
+
+            try {
+                const data = JSON.parse(saved);
+
+                // Basic info
+                if (data.reportUnit) document.getElementById('reportUnit').value = data.reportUnit;
+                if (data.reportDate) document.getElementById('reportDate').value = data.reportDate;
+                if (data.district) document.getElementById('district').value = data.district;
+                if (data.teamName) document.getElementById('teamName').value = data.teamName;
+                if (data.contactName) document.getElementById('contactName').value = data.contactName;
+                if (data.contactPhone) document.getElementById('contactPhone').value = data.contactPhone;
+                if (data.contactEmail) document.getElementById('contactEmail').value = data.contactEmail;
+
+                // Category checkboxes
+                document.getElementById('cat_student').checked = data.cat_student || false;
+                document.getElementById('cat_freelancer').checked = data.cat_freelancer || false;
+                document.getElementById('cat_developer').checked = data.cat_developer || false;
+                document.getElementById('cat_researcher').checked = data.cat_researcher || false;
+                document.getElementById('cat_innovator').checked = data.cat_innovator || false;
+                document.getElementById('cat_company').checked = data.cat_company || false;
+                document.getElementById('cat_other').checked = data.cat_other || false;
+                if (data.cat_other_text) document.getElementById('cat_other_text').value = data.cat_other_text;
+
+                // Field checkboxes
+                document.getElementById('field_xr').checked = data.field_xr || false;
+                document.getElementById('field_embodied').checked = data.field_embodied || false;
+                document.getElementById('field_drama').checked = data.field_drama || false;
+                document.getElementById('field_ecommerce').checked = data.field_ecommerce || false;
+                document.getElementById('field_driving').checked = data.field_driving || false;
+                document.getElementById('field_lowalt').checked = data.field_lowalt || false;
+                document.getElementById('field_gov').checked = data.field_gov || false;
+                document.getElementById('field_game').checked = data.field_game || false;
+                document.getElementById('field_agent').checked = data.field_agent || false;
+                document.getElementById('field_other').checked = data.field_other || false;
+                if (data.field_other_text) document.getElementById('field_other_text').value = data.field_other_text;
+
+                // Project intro
+                if (data.projectIntro) document.getElementById('projectIntro').value = data.projectIntro;
+
+                // Stage checkboxes
+                document.getElementById('stage_idea').checked = data.stage_idea || false;
+                document.getElementById('stage_dev').checked = data.stage_dev || false;
+                document.getElementById('stage_product').checked = data.stage_product || false;
+                document.getElementById('stage_biz').checked = data.stage_biz || false;
+                document.getElementById('stage_other').checked = data.stage_other || false;
+                if (data.stage_other_text) document.getElementById('stage_other_text').value = data.stage_other_text;
+
+                // Need checkboxes
+                document.getElementById('need_policy').checked = data.need_policy || false;
+                document.getElementById('need_compute').checked = data.need_compute || false;
+                document.getElementById('need_space').checked = data.need_space || false;
+                document.getElementById('need_scene').checked = data.need_scene || false;
+                document.getElementById('need_funding').checked = data.need_funding || false;
+                document.getElementById('need_incubation').checked = data.need_incubation || false;
+                document.getElementById('need_talent').checked = data.need_talent || false;
+                document.getElementById('need_other').checked = data.need_other || false;
+                if (data.need_other_text) document.getElementById('need_other_text').value = data.need_other_text;
+
+                // Remarks
+                if (data.remarks) document.getElementById('remarks').value = data.remarks;
+
+                // Signature dates
+                if (data.signDate1) document.getElementById('signDate1').value = data.signDate1;
+                if (data.signDate2) document.getElementById('signDate2').value = data.signDate2;
+                if (data.signDate3) document.getElementById('signDate3').value = data.signDate3;
+                if (data.signDate4) document.getElementById('signDate4').value = data.signDate4;
+                if (data.signDate5) document.getElementById('signDate5').value = data.signDate5;
+                if (data.signDate6) document.getElementById('signDate6').value = data.signDate6;
+
+            } catch (e) {
+                console.error('Failed to load saved form data:', e);
+            }
+        }
+
+        // Clear form
+        function clearForm() {
+            if (confirm('确定要清空所有填写的内容吗？此操作不可撤销。')) {
+                localStorage.removeItem(STORAGE_KEY);
+                location.reload();
+            }
+        }
+
+        // Download PDF
+        function downloadPDF() {
+            // Auto save before downloading
+            saveToLocalStorage();
+
+            // Show instructions
+            alert('即将打开打印对话框，请选择"另存为PDF"选项保存文件。');
+
+            // Trigger print dialog
+            window.print();
+        }
+
+        // Load saved data when page loads
+        window.addEventListener('DOMContentLoaded', loadFromLocalStorage);
+
+        // Auto save every 30 seconds
+        setInterval(saveToLocalStorage, 30000);
+
+        // Print event handlers
+        window.addEventListener('beforeprint', function() {
+            document.body.style.background = 'white';
+            document.body.style.padding = '0';
+        });
+
+        window.addEventListener('afterprint', function() {
+            document.body.style.background = '#f5f5f5';
+            document.body.style.padding = '20px';
+        });
+    </script>
+</body>
+</html>
