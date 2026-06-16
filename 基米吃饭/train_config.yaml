@@ -1,0 +1,56 @@
+# 基米吃饭 - 训练配置文件
+# 用于 LLaMA-Factory SFT 微调
+# 更新日期：2026-06-15
+# 模型升级：1.5B → 7B → Qwen3-8B
+
+# 模型配置
+model_name_or_path: ./models/base/qwen3-8b      # 升级到Qwen3-8B模型
+
+# 数据配置
+dataset_dir: ./data/processed
+dataset: train_llama
+eval_dataset: val_llama
+template: qwen
+finetuning_type: lora
+
+# 输出配置
+output_dir: ./models/finetuned
+logging_dir: ./logs
+
+# 训练参数
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 16
+num_train_epochs: 10                # 10轮训练
+learning_rate: 2.0e-6               # 8B模型使用较小的学习率
+lr_scheduler_type: cosine
+warmup_steps: 300                   # 8B模型需要更多预热步骤
+weight_decay: 0.01
+
+# LoRA配置（8B模型需要更大的rank）
+lora_rank: 16                       # LoRA秩
+lora_alpha: 32                      # LoRA缩放因子
+lora_target: q_proj,v_proj,k_proj,o_proj,gate_proj,up_proj,down_proj
+
+# 保存配置
+save_steps: 500                     # 调整保存频率
+save_total_limit: 3                 # 保留更多检查点
+save_strategy: steps
+
+# 日志配置
+logging_steps: 10
+report_to: none
+
+# 精度配置
+bf16: true
+tf32: true                          # 启用TF32加速（Ampere及以上GPU）
+
+# 其他配置
+seed: 42
+dataloader_num_workers: 4
+remove_unused_columns: false
+gradient_checkpointing: true        # 启用梯度检查点，节省显存
+
+# 评估配置
+# 使用单独的验证文件，不需要从训练数据中分割
+eval_strategy: steps
+eval_steps: 500

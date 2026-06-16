@@ -1,0 +1,18 @@
+{
+  "train_llama": {
+    "file_name": "train_llama.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "val_llama": {
+    "file_name": "val_llama.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  }
+}
