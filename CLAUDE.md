@@ -78,15 +78,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   - 创建学习笔记 → 先创建 `学习笔记/` 文件夹
   - 创建临时文件 → 先创建 `临时文件/` 文件夹
 
-#### 11. Git 推送规则
-- **不要每次修改文件就自动推送**：修改文件后只在本地保存，不执行 `git push`
-- **只在用户明确要求时推送**：当用户说"推送"、"更新到 git"、"同步到 GitHub" 时才执行 `git push`
-- **一次性推送所有修改**：推送时将所有未提交的修改一起提交并推送
+#### 11. Git 推送规则（重要！）
+- **Git操作只在主文件夹中执行**：所有Git操作（`git add`、`git commit`、`git push`等）只能在主文件夹（`claude project/`）中执行
+- **绝对禁止在其他文件夹操作Git**：禁止在 `基米吃饭/`、`01-MVP版本-验证核心能力/`、`05-学习记录/` 等子文件夹中执行任何Git操作
+- **绝对禁止擅自更新Git**：除非用户明确要求，否则绝对不能执行 `git add`、`git commit`、`git push` 等任何Git操作
+- **只在用户明确要求时推送**：只有当用户说出"推送"、"更新到 git"、"同步到 GitHub"、"保存到仓库" 等明确指令时才执行Git操作
+- **修改文件后只在本地保存**：使用 Edit、Write 工具修改文件后，文件会自动保存到本地，不需要执行Git操作
 - **推送前先检查**：执行 `git status` 确认修改内容，执行 `git add` 和 `git commit` 后再推送
 - **示例**：
-  - 用户说"把代码更新到 git" → 执行 `git add . && git commit -m "xxx" && git push`
+  - 用户说"把代码更新到 git" → 在主文件夹中执行 `git add . && git commit -m "xxx" && git push`
   - 用户说"推送" → 同上
-  - 用户没有说推送 → 只在本地修改，不执行 `git push`
+  - 用户没有说推送 → 只在本地修改，绝对不执行任何Git命令
+  - 用户说"保存" → 只在本地保存，不执行Git操作（除非明确说"保存到git"）
 
 ## Repository Overview
 
