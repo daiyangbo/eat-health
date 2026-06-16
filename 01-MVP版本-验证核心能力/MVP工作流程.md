@@ -241,7 +241,7 @@ RAG知识库就绪
 | 3.1 | 注册AutoDL | 注册账号、充值 | 账号可用 | 30分钟 |
 | 3.2 | 创建实例 | 选择RTX 3090、PyTorch镜像 | 实例创建成功 | 15分钟 |
 | 3.3 | 上传数据 | 上传训练数据和代码 | 文件完整 | 30分钟 |
-| 3.4 | 下载模型 | 下载Qwen2.5-1.5B | 模型文件完整 | 1小时 |
+| 3.4 | 下载模型 | 下载Qwen3-8B | 模型文件完整 | 1小时 |
 | 3.5 | 安装依赖 | 安装LLaMA-Factory等 | 无报错 | 30分钟 |
 | 3.6 | 编写训练脚本 | 配置训练参数 | 脚本可运行 | 2小时 |
 | 3.7 | 执行训练 | 运行SFT微调 | 训练完成无报错 | 3小时 |
@@ -268,7 +268,7 @@ RAG知识库就绪
 # config.yaml
 
 model:
-  name: "Qwen/Qwen2.5-1.5B"
+  name: "Qwen/Qwen3-8B"
   torch_dtype: "bfloat16"
   device_map: "auto"
 
@@ -277,9 +277,9 @@ training:
   num_train_epochs: 3
   per_device_train_batch_size: 4
   gradient_accumulation_steps: 4
-  learning_rate: 1.0e-5
+  learning_rate: 2.0e-6
   lr_scheduler_type: "cosine"
-  warmup_steps: 100
+  warmup_steps: 300
   save_steps: 500
   save_total_limit: 2
   bf16: true
@@ -301,7 +301,7 @@ Step 1: 准备环境
 
 Step 2: 下载模型
 ├── 设置HuggingFace镜像
-├── 下载Qwen2.5-1.5B
+├── 下载Qwen3-8B
 └── 验证模型文件
 
 Step 3: 配置训练
@@ -330,7 +330,7 @@ from datasets import load_dataset
 import torch
 
 # 加载模型和tokenizer
-model_name = "Qwen/Qwen2.5-1.5B"
+model_name = "Qwen/Qwen3-8B"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.bfloat16)
 
@@ -669,7 +669,7 @@ python -m pytest tests/
 
 ### 参考资料
 
-1. [Qwen2.5模型](https://huggingface.co/Qwen/Qwen2.5-1.5B)
+1. [Qwen3-8B模型](https://huggingface.co/Qwen/Qwen3-8B)
 2. [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory)
 3. [LangChain RAG教程](https://python.langchain.com/docs/tutorials/rag/)
 4. [ChromaDB文档](https://docs.trychroma.com/)

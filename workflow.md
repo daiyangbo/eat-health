@@ -142,7 +142,7 @@
 
 ```
 来源：[eatthismuch.com](https://www.eatthismuch.com/)
-来源：[Qwen2.5文档](https://huggingface.co/Qwen/Qwen2.5-1.5B)
+来源：[Qwen3-8B文档](https://huggingface.co/Qwen/Qwen3-8B)
 推测：基于行业惯例推断
 ```
 
